@@ -1,0 +1,19 @@
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
+
+# Tooling caches
+.cache/
+.vite/
+
+# Local Claude permissions/settings
+.claude/settings.local.json

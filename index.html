@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sateesh Kumar L, Product Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ─── Variables ─── */
+:root {
+  --bg:        #FFFFFF;
+  --fg:        #1C1814;
+  --accent:    #8A6A3E;
+  --muted:     #9A8E7E;
+  --border:    #E2D9CC;
+  --card-bg:   #F5F2EE;
+  --ff-disp:   'Cormorant Garamond', serif;
+  --ff-body:   'DM Sans', sans-serif;
+  --pad:       clamp(40px, 8vw, 120px);
+  --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Base ─── */
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Nav ─── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--ff-disp);
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--fg);
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.nav-links a:hover { color: var(--fg); }
+.nav-cta {
+  font-family: var(--ff-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 8px 20px;
+  transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--accent); color: var(--bg); }
+
+/* ─── Hamburger ─── */
+.nav-toggle {
+  display: none;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 110;
+}
+.nav-toggle span {
+  display: block;
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  height: 1px;
+  background: var(--fg);
+  transition: transform 0.3s, top 0.3s, opacity 0.2s;
+}
+.nav-toggle span:nth-child(1) { top: 9px; }
+.nav-toggle span:nth-child(2) { top: 14px; }
+.nav-toggle span:nth-child(3) { top: 19px; }
+.nav-toggle.open span:nth-child(1) { top: 14px; transform: rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { top: 14px; transform: rotate(-45deg); }
+
+/* ─── Hero ─── */
+.hero {
+  padding: clamp(80px, 10vw, 140px) var(--pad) clamp(60px, 7vw, 96px);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.hero-intro { max-width: 700px; margin: 0 auto; }
+.hero-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  margin: 0 auto 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hero-intro p {
+  font-family: var(--ff-disp);
+  font-size: clamp(22px, 2.8vw, 40px);
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: clamp(16px, 2vw, 28px);
+}
+.hero-intro p:last-child { margin-bottom: 0; }
+.hero-intro strong { font-weight: 400; color: var(--fg); }
+.hero-clients {
+  display: flex;
+  justify-content: center;
+  gap: clamp(24px, 5vw, 64px);
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(28px, 3vw, 40px);
+  border-top: 1px solid var(--border);
+}
+.hero-clients span {
+  font-family: var(--ff-body);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.5;
+}
+
+/* ─── Section Base ─── */
+section {
+  padding: clamp(60px, 8vw, 120px) var(--pad);
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--ff-disp);
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--fg);
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.6;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.section-header-text { max-width: 520px; }
+
+/* ─── Projects ─── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+
+.project-card {
+  background: var(--card-bg);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+.project-card:hover { border-color: var(--accent); }
+.project-card:hover .proj-title { color: var(--accent); }
+.project-card:hover .proj-company { color: var(--fg); }
+.project-card:hover .proj-arrow { opacity: 1; transform: translate(0,0); }
+
+.proj-img-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  transition: opacity var(--transition);
+  color: var(--fg);
+}
+
+.proj-content {
+  position: relative;
+  padding: 40px 44px 44px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s;
+}
+.project-card:hover .proj-content { border-color: var(--accent); }
+
+.proj-num {
+  font-family: var(--ff-body);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: auto;
+  padding-bottom: 80px;
+}
+.proj-company {
+  font-family: var(--ff-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  transition: color 0.25s;
+}
+.proj-title {
+  font-family: var(--ff-disp);
+  font-size: clamp(22px, 2.5vw, 34px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.15;
+  color: var(--fg);
+  margin-bottom: 16px;
+  transition: color 0.25s;
+}
+.proj-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.proj-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.proj-tag {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.proj-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0;
+  transform: translate(-8px, 4px);
+  transition: all 0.3s;
+}
+.proj-arrow svg { width: 14px; height: 14px; }
+
+/* ─── Experience ─── */
+.exp-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 72px;
+}
+.exp-body {
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--fg);
+}
+.exp-body strong { font-weight: 500; color: var(--fg); }
+.exp-body p + p { margin-top: 16px; }
+
+.timeline { padding-top: 40px; }
+.timeline-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.timeline-line {
+  position: absolute;
+  top: 8px; left: 0; right: 0;
+  height: 1px;
+  background: var(--border);
+}
+.timeline-progress {
+  position: absolute;
+  top: 8px; left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+}
+.tl-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 1;
+}
+.tl-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
+}
+.tl-item:last-child .tl-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+.tl-label {
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--muted);
+  text-align: center;
+  max-width: 88px;
+}
+.tl-item:last-child .tl-label { color: var(--fg); font-weight: 500; }
+
+/* ─── About ─── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-text .section-title {
+  font-size: clamp(24px, 2.8vw, 40px);
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+.about-text p {
+  font-size: clamp(15px, 1.3vw, 17px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.about-text p:last-child { margin-bottom: 0; }
+.about-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 1px;
+  background: var(--border);
+}
+.photo-cell {
+  background: var(--card-bg);
+  position: relative;
+  overflow: hidden;
+}
+.photo-cell:first-child { grid-row: span 2; }
+.photo-placeholder { position: absolute; inset: 0; }
+.photo-placeholder svg { width: 100%; height: 100%; }
+.photo-label {
+  position: absolute;
+  bottom: 12px; left: 12px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.5;
+  font-family: monospace;
+  font-weight: 400;
+}
+
+/* ─── Explorations ─── */
+.exp-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-top: 1px solid var(--border);
+}
+.exp-tile {
+  background: var(--card-bg);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 180px;
+}
+.exp-tile-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.exp-tile-title {
+  font-family: var(--ff-disp);
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--fg);
+  line-height: 1.2;
+}
+.exp-tile-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: auto;
+}
+.exp-tile-coming {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--border);
+  margin-top: 16px;
+}
+
+/* ─── Contact ─── */
+.contact-inner {
+  max-width: 680px;
+}
+.contact-sub {
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 48px;
+  max-width: 480px;
+}
+.contact-email {
+  display: inline-block;
+  font-family: var(--ff-disp);
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--fg);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-bottom: 36px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.contact-email:hover { border-color: var(--accent); color: var(--accent); }
+.contact-links {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.contact-links a:hover { color: var(--fg); }
+
+/* ─── Footer ─── */
+footer {
+  padding: 48px var(--pad);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-name {
+  font-family: var(--ff-disp);
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.06em;
+}
+.footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+}
+.footer-links a:hover { color: var(--accent); }
+
+/* ─── Case Studies ─── */
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.cs-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  text-decoration: none;
+  color: inherit;
+}
+.cs-card:hover { border-color: var(--accent); }
+.cs-card:hover .cs-title { color: var(--accent); }
+.cs-card:hover .cs-arrow { opacity: 1; transform: translate(0, 0); }
+
+.cs-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--card-bg);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.cs-img svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.cs-body {
+  padding: 28px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.cs-num {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.cs-title {
+  font-family: var(--ff-disp);
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--fg);
+  margin-bottom: 10px;
+  transition: color 0.25s;
+}
+.cs-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 24px;
+  flex: 1;
+}
+.cs-stats {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.cs-stat {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--fg);
+  background: var(--card-bg);
+  padding: 3px 10px;
+}
+.cs-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.cs-meta span {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cs-meta span + span::before {
+  content: '·';
+  margin-right: 12px;
+}
+.cs-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0;
+  transform: translate(-8px, 4px);
+  transition: all 0.3s;
+}
+.cs-arrow svg { width: 14px; height: 14px; }
+
+/* ─── Divider ─── */
+.divider { height: 1px; background: var(--border); margin: 0 var(--pad); }
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .cs-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-grid .cs-card:nth-child(3) { grid-column: span 2; }
+  .exp-tiles { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  /* Nav: hamburger */
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg);
+    padding: 32px var(--pad);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border-top: 1px solid var(--border);
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-links li {
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links a {
+    display: block;
+    padding: 20px 0;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: var(--fg);
+  }
+
+  /* Hero */
+  .hero-intro p { font-size: clamp(20px, 5.5vw, 28px); }
+  .hero-clients { flex-wrap: wrap; gap: 14px 24px; }
+
+  /* Section header */
+  .section-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+
+  /* Case Studies */
+  .cs-grid { grid-template-columns: 1fr; }
+  .cs-grid .cs-card:nth-child(3) { grid-column: auto; }
+  .cs-body { padding: 24px 24px 28px; }
+
+  /* Projects */
+  .projects-grid { grid-template-columns: 1fr; }
+  .proj-content { padding: 32px 28px 32px; }
+  .proj-num { padding-bottom: 48px; }
+
+  /* Experience */
+  .exp-text { grid-template-columns: 1fr; gap: 32px; margin-bottom: 56px; }
+
+  /* Timeline → vertical */
+  .timeline { padding-top: 24px; }
+  .timeline-track {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding-left: 24px;
+  }
+  .timeline-line {
+    top: 0; bottom: 0; left: 7px; right: auto;
+    width: 1px; height: auto;
+  }
+  .timeline-progress {
+    top: 0; left: 7px; right: auto;
+    width: 1px; height: 100%;
+  }
+  .tl-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-left: -24px;
+  }
+  .tl-label {
+    text-align: left;
+    max-width: none;
+    font-size: 13px;
+  }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-photos { grid-template-rows: 240px 180px; }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 40px var(--pad);
+  }
+  .footer-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .hero-clients { gap: 14px 18px; }
+  .hero-clients span { font-size: 11px; }
+  .about-photos { grid-template-columns: 1fr; grid-template-rows: 280px 180px 180px; }
+  .about-photos .photo-cell:first-child { grid-row: auto; }
+  .exp-tiles { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── Nav ─── -->
+<nav>
+  <a class="nav-logo" href="#">Sateesh Kumar L</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#case-studies">Case Studies</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#explorations">Explorations</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── Hero ─── -->
+<div class="hero" id="work">
+  <div class="hero-intro">
+<p>Hey there 👋 I'm <strong>Sateesh Kumar L</strong>, a <strong>Digital Product Designer</strong>.</p>
+    <p>12 years. <strong>Fortune 50</strong> to startups. <strong>AI design</strong>, interfaces, icons, systems.</p>
+    <p><strong>Photography</strong> 📸 and <strong>short films</strong> 🎬 on the side.</p>
+  </div>
+  <div class="hero-clients">
+    <span>Amazon</span>
+    <span>Vodafone</span>
+    <span>Philips</span>
+    <span>GE</span>
+    <span>UBS</span>
+  </div>
+</div>
+
+<!-- ─── Case Studies ─── -->
+<section id="case-studies">
+  <div class="section-header">
+    <div class="section-header-text">
+      <div class="section-label">Case Studies</div>
+      <h2 class="section-title">Deep Dives</h2>
+      <p class="section-sub">End-to-end project breakdowns — problem, process, and outcome.</p>
+    </div>
+  </div>
+
+  <div class="cs-grid">
+
+    <a class="cs-card" href="case-studies/aampe.html">
+      <div class="cs-img">
+        <svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+          <rect width="480" height="270" fill="var(--card-bg)"/>
+          <line x1="0" y1="0" x2="480" y2="270" stroke="var(--border)" stroke-width="1"/>
+          <line x1="480" y1="0" x2="0" y2="270" stroke="var(--border)" stroke-width="1"/>
+          <text x="240" y="141" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--muted)">1600 × 900</text>
+        </svg>
+      </div>
+      <div class="cs-body">
+        <div class="cs-num">01 — Aampe</div>
+        <div class="cs-title">From Early Components to a Scalable Design System</div>
+        <p class="cs-desc">UI Design Library for Aampe — an Agentic Personalisation Platform. Built in phases to support a live product rebrand without disrupting existing users.</p>
+        <div class="cs-stats">
+          <span class="cs-stat">50+ components</span>
+          <span class="cs-stat">60+ Figma variables</span>
+          <span class="cs-stat">Light/dark modes</span>
+        </div>
+        <div class="cs-meta">
+          <span>Design System Designer</span>
+          <span>HueGrid</span>
+          <span>2025–present</span>
+        </div>
+        <span class="cs-arrow">Read Case Study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+    <a class="cs-card" href="case-studies/rhythm.html">
+      <div class="cs-img">
+        <svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+          <rect width="480" height="270" fill="var(--card-bg)"/>
+          <line x1="0" y1="0" x2="480" y2="270" stroke="var(--border)" stroke-width="1"/>
+          <line x1="480" y1="0" x2="0" y2="270" stroke="var(--border)" stroke-width="1"/>
+          <text x="240" y="141" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--muted)">1600 × 900</text>
+        </svg>
+      </div>
+      <div class="cs-body">
+        <div class="cs-num">02 — Rhythm Healthcare</div>
+        <div class="cs-title">Bringing Design Consistency to a Cardiac Monitoring Platform</div>
+        <p class="cs-desc">Redesigning a clinician's daily workflow on a platform processing 1.2M+ transmissions a year — and hearing "you made my work easier."</p>
+        <div class="cs-stats">
+          <span class="cs-stat">1.2M+ transmissions/yr</span>
+          <span class="cs-stat">100K+ patients</span>
+          <span class="cs-stat">Clinician-validated</span>
+        </div>
+        <div class="cs-meta">
+          <span>Sole Designer</span>
+          <span>2023–24</span>
+        </div>
+        <span class="cs-arrow">Read Case Study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+    <a class="cs-card" href="case-studies/first-responder.html">
+      <div class="cs-img">
+        <svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+          <rect width="480" height="270" fill="var(--card-bg)"/>
+          <line x1="0" y1="0" x2="480" y2="270" stroke="var(--border)" stroke-width="1"/>
+          <line x1="480" y1="0" x2="0" y2="270" stroke="var(--border)" stroke-width="1"/>
+          <text x="240" y="141" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--muted)">1600 × 900</text>
+        </svg>
+      </div>
+      <div class="cs-body">
+        <div class="cs-num">03 — First Responder</div>
+        <div class="cs-title">Designing 4 Surfaces of a Life-Critical Drone Airspace Platform</div>
+        <p class="cs-desc">AiRXOS (part of GE Aviation) — airspace management used by 200+ US public safety agencies. Web, iPad, and iPhone, as the sole designer.</p>
+        <div class="cs-stats">
+          <span class="cs-stat">4 surfaces</span>
+          <span class="cs-stat">200+ agencies</span>
+          <span class="cs-stat">~70% time saved</span>
+        </div>
+        <div class="cs-meta">
+          <span>Product Designer</span>
+          <span>GE Aviation</span>
+          <span>2017–19</span>
+        </div>
+        <span class="cs-arrow">Read Case Study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── Projects ─── -->
+<section id="works">
+  <div class="section-header">
+    <div class="section-header-text">
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">A decade of designing for complex systems, from enterprise design languages to consumer-facing apps.</p>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">01 · Design Systems</div>
+        <div class="proj-company">Amazon</div>
+        <div class="proj-title">Enterprise Design Language</div>
+        <p class="proj-desc">Design systems work for enterprise products at scale — building shared component infrastructure, token architecture, and documentation for high-velocity product teams.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Design Systems</span>
+          <span class="proj-tag">Tokens</span>
+          <span class="proj-tag">Enterprise</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">02 · Mobile UX</div>
+        <div class="proj-company">Vodafone</div>
+        <div class="proj-title">Consumer Mobile Experience</div>
+        <p class="proj-desc">UX for consumer mobile in a regulated telecom environment — improving customer journeys across complex, multi-market products with significant user scale.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Mobile UX</span>
+          <span class="proj-tag">Consumer</span>
+          <span class="proj-tag">Multi-market</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">03 · Healthcare UX</div>
+        <div class="proj-company">Philips</div>
+        <div class="proj-title">Clinical Interface Design</div>
+        <p class="proj-desc">UX for medical and healthcare platforms — designing data-dense clinical interfaces where precision, consistency, and cognitive load are non-negotiable.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Healthcare</span>
+          <span class="proj-tag">Data Viz</span>
+          <span class="proj-tag">Safety-Critical</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">04 · Platform Design</div>
+        <div class="proj-company">UBS</div>
+        <div class="proj-title">Financial Services UX</div>
+        <p class="proj-desc">Product design for financial services — complex workflows, compliance-driven constraints, and high-stakes user decisions that leave no room for ambiguity.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Fintech</span>
+          <span class="proj-tag">Enterprise UX</span>
+          <span class="proj-tag">Complex Systems</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Experience ─── -->
+<div class="divider"></div>
+<section>
+  <div class="section-header">
+    <div class="section-header-text">
+      <div class="section-label">Background</div>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+  </div>
+  <div class="exp-text">
+    <div class="exp-body">
+      <p>Started in print and frontend, found a home in product design and never looked back. Collaborators keep pointing out that I also have a sharp instinct for hyperlocal market intelligence.</p>
+      <p>Right now I'm at <strong>HueGrid</strong>, mostly deep in <strong>product design and design systems</strong>, with a little branding and no-code on the side.</p>
+    </div>
+    <div class="exp-body" style="color: var(--muted); font-size: 15px;">
+      <p>Mostly curious, always listening, always collaborative. I believe great design happens when systems thinking meets genuine empathy for the people using your product.</p>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-track">
+      <div class="timeline-line"></div>
+      <div class="timeline-progress"></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Print Designer &amp; Frontend Dev</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Web Designer</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">UI Designer</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">UX Designer</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">UX &amp; No-Code Designer</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Product &amp; No-Code Designer</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Product Designer, No-Code &amp; AI</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── About ─── -->
+<div class="divider"></div>
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-label">Personal</div>
+      <h2 class="section-title">Beyond the Screen</h2>
+      <p>Other than work, I'm into photography, music, good food, and movies. I read whatever catches the eye, and travel to different cities and countries whenever possible.</p>
+      <p>At home, the kids keep things grounded and real.</p>
+    </div>
+    <div class="about-photos">
+      <div class="photo-cell">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="400" fill="var(--card-bg)"/>
+            <line x1="0" y1="0" x2="300" y2="400" stroke="var(--border)" stroke-width="1"/>
+            <line x1="300" y1="0" x2="0" y2="400" stroke="var(--border)" stroke-width="1"/>
+            <rect x="80" y="120" width="140" height="170" rx="1" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4"/>
+            <text x="150" y="216" text-anchor="middle" font-family="monospace" font-size="9" fill="var(--muted)">portrait</text>
+          </svg>
+        </div>
+        <span class="photo-label">portrait · sateesh</span>
+      </div>
+      <div class="photo-cell">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="var(--card-bg)"/>
+            <line x1="0" y1="0" x2="300" y2="200" stroke="var(--border)" stroke-width="1"/>
+            <line x1="300" y1="0" x2="0" y2="200" stroke="var(--border)" stroke-width="1"/>
+            <text x="150" y="108" text-anchor="middle" font-family="monospace" font-size="9" fill="var(--muted)">travel shot</text>
+          </svg>
+        </div>
+        <span class="photo-label">travel</span>
+      </div>
+      <div class="photo-cell">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="var(--card-bg)"/>
+            <line x1="0" y1="0" x2="300" y2="200" stroke="var(--border)" stroke-width="1"/>
+            <line x1="300" y1="0" x2="0" y2="200" stroke="var(--border)" stroke-width="1"/>
+            <text x="150" y="108" text-anchor="middle" font-family="monospace" font-size="9" fill="var(--muted)">city / travel</text>
+          </svg>
+        </div>
+        <span class="photo-label">cities</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Explorations ─── -->
+<div class="divider"></div>
+<section id="explorations">
+  <div class="section-header">
+    <div class="section-header-text">
+      <div class="section-label">Explorations</div>
+      <h2 class="section-title">Side Experiments</h2>
+      <p class="section-sub">UI experiments, AI-built prototypes, no-code builds, and things made quickly for the joy of making.</p>
+    </div>
+  </div>
+  <div class="exp-tiles">
+    <div class="exp-tile">
+      <div class="exp-tile-label">AI · No-Code</div>
+      <div class="exp-tile-title">Prototype Experiments</div>
+      <p class="exp-tile-body">Turning rough ideas into interactive prototypes using AI tools and no-code platforms.</p>
+      <div class="exp-tile-coming">Coming soon</div>
+    </div>
+    <div class="exp-tile">
+      <div class="exp-tile-label">UI · Visual</div>
+      <div class="exp-tile-title">Visual Explorations</div>
+      <p class="exp-tile-body">Motion experiments, layout studies, and visual design outside of client work.</p>
+      <div class="exp-tile-coming">Coming soon</div>
+    </div>
+    <div class="exp-tile">
+      <div class="exp-tile-label">Tools · Builds</div>
+      <div class="exp-tile-title">Things I Built</div>
+      <p class="exp-tile-body">Small tools, dashboards, and no-code builds shipped for real use.</p>
+      <div class="exp-tile-coming">Coming soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact ─── -->
+<div class="divider"></div>
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's talk.</h2>
+    <p class="contact-sub">Open to product design roles, design system work, and interesting problems. Drop me a line — I read everything.</p>
+    <a class="contact-email" href="mailto:satishkumar.2163@gmail.com">satishkumar.2163@gmail.com</a>
+    <div class="contact-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">Dribbble</a>
+      <a href="#">HueGrid</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="footer-name">Sateesh Kumar L</div>
+  <div class="footer-copy">© 2025 · Senior Product Designer</div>
+  <div class="footer-links">
+    <a href="#">LinkedIn</a>
+    <a href="#">Dribbble</a>
+    <a href="#">HueGrid</a>
+    <a href="mailto:satishkumar.2163@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>

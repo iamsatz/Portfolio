@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Sateesh Kumar L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ─── Variables ─── */
+:root {
+  --bg:          #FFFFFF;
+  --fg:          #1C1814;
+  --accent:      #8A6A3E;
+  --muted:       #9A8E7E;
+  --border:      #E2D9CC;
+  --card-bg:     #F5F2EE;
+  --orange:      #FF6E45;
+  --red:         #F52200;
+  --ff-disp:     'Cormorant Garamond', serif;
+  --ff-body:     'DM Sans', sans-serif;
+  --pad:         clamp(40px, 8vw, 120px);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Nav ─── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--ff-disp);
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.nav-links a:hover { color: var(--fg); }
+.nav-toggle {
+  display: none;
+  width: 28px; height: 28px;
+  background: none; border: none; cursor: pointer; padding: 0;
+  position: relative; z-index: 110;
+}
+.nav-toggle span {
+  display: block; position: absolute;
+  left: 4px; right: 4px; height: 1px;
+  background: var(--fg);
+  transition: transform 0.3s, top 0.3s, opacity 0.2s;
+}
+.nav-toggle span:nth-child(1) { top: 9px; }
+.nav-toggle span:nth-child(2) { top: 14px; }
+.nav-toggle span:nth-child(3) { top: 19px; }
+.nav-toggle.open span:nth-child(1) { top: 14px; transform: rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { top: 14px; transform: rotate(-45deg); }
+
+/* ─── Section 1: Intro Hero ─── */
+.about-intro {
+  position: relative;
+  background: var(--bg);
+  min-height: 820px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Orange-red blob on left */
+.about-blob {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(280px, 39vw, 567px);
+  height: clamp(240px, 26vw, 381px);
+  border-radius: 0 190px 190px 0;
+  background: radial-gradient(ellipse at 25% 85%, #FF6E45 0%, #FA4223 50%, #F52200 100%);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.about-portrait {
+  position: absolute;
+  left: 23%;
+  top: -21%;
+  width: 80%;
+  height: 143%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+/* Text block */
+.about-intro-text {
+  padding: clamp(60px, 8vw, 140px) clamp(40px, 5vw, 80px) clamp(60px, 8vw, 140px) clamp(40px, 5vw, 80px);
+  margin-left: clamp(260px, 40vw, 580px);
+  max-width: 640px;
+}
+.about-name {
+  font-family: var(--ff-disp);
+  font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  color: var(--fg);
+  margin-bottom: 20px;
+}
+.about-tagline {
+  font-size: clamp(16px, 1.7vw, 24px);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--fg);
+  margin-bottom: 20px;
+}
+.about-bio {
+  font-size: clamp(14px, 1.25vw, 18px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--fg);
+  margin-bottom: 28px;
+  max-width: 562px;
+}
+.about-ai {
+  font-size: clamp(15px, 1.4vw, 20px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--fg);
+}
+.about-ai strong { font-weight: 500; }
+
+/* Decorative period */
+.about-period {
+  position: absolute;
+  right: clamp(20px, 5.5vw, 80px);
+  top: 50%;
+  transform: translateY(-80%);
+  font-family: var(--ff-disp);
+  font-size: clamp(48px, 6.5vw, 96px);
+  color: white;
+  line-height: 1;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Orange gradient bottom line */
+.about-intro-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FF6E45 0%, #FA4223 50%, #F52200 100%);
+}
+
+/* ─── Section 2: Work Experience ─── */
+.about-work {
+  position: relative;
+  background: var(--bg);
+  min-height: 730px;
+  padding: clamp(60px, 8vw, 130px) var(--pad) 0;
+  border-bottom: 1px solid var(--border);
+}
+.about-work-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 64px;
+}
+.about-work-heading {
+  font-family: var(--ff-disp);
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  margin-bottom: 32px;
+}
+.about-work-body {
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--fg);
+}
+.about-work-body p + p { margin-top: 16px; }
+.about-work-body strong { font-weight: 500; }
+.about-work-image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.about-work-image img {
+  width: 100%;
+  max-width: 391px;
+  height: clamp(300px, 32vw, 465px);
+  object-fit: cover;
+  mix-blend-mode: darken;
+  opacity: 0.6;
+}
+
+/* ─── Timeline ─── */
+.about-timeline {
+  padding: 0 0 clamp(48px, 6vw, 80px);
+  overflow-x: auto;
+}
+.tl-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-width: 700px;
+}
+.tl-line {
+  position: absolute;
+  top: 9px; left: 0; right: 0;
+  height: 1px;
+  background: var(--border);
+}
+.tl-progress {
+  position: absolute;
+  top: 9px; left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #FF6E45, #F52200);
+}
+.tl-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 1;
+}
+.tl-dot {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.tl-node:last-child .tl-dot {
+  background: var(--orange);
+  border-color: var(--orange);
+  box-shadow: 0 0 0 4px rgba(255,110,69,0.18);
+}
+.tl-label {
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+  max-width: 92px;
+}
+.tl-node:last-child .tl-label { color: var(--fg); font-weight: 500; }
+
+/* ─── Section 3: Personal Interests ─── */
+.about-personal {
+  background: var(--bg);
+  min-height: 820px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: clamp(60px, 8vw, 120px) var(--pad);
+}
+
+/* Photo Grid */
+.about-photos {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  grid-template-rows: auto auto;
+  gap: 12px;
+}
+.photo {
+  border-radius: 12px;
+  border: 2px solid white;
+  overflow: hidden;
+  position: relative;
+  background: #354852;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.photo-large {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  aspect-ratio: 1 / 1;
+}
+.photo-small-top {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  aspect-ratio: 1 / 1;
+}
+.photo-landscape {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  aspect-ratio: 312 / 180;
+}
+.photo-tall {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  aspect-ratio: 186 / 306;
+  background: #344927;
+}
+
+/* Personal text */
+.about-personal-text { }
+.about-personal-heading {
+  font-family: var(--ff-disp);
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  margin-bottom: 24px;
+}
+.about-personal-body {
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--fg);
+  max-width: 562px;
+}
+
+/* ─── Footer ─── */
+footer {
+  padding: 48px var(--pad);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-name {
+  font-family: var(--ff-disp);
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.06em;
+}
+.footer-copy {
+  font-size: 12px; font-weight: 300;
+  color: var(--muted); letter-spacing: 0.04em;
+}
+.footer-links {
+  display: flex; gap: 24px;
+  font-size: 13px; font-weight: 300;
+  color: var(--muted);
+}
+.footer-links a:hover { color: var(--accent); }
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .about-work-image img { max-width: 280px; }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+    flex-direction: column; gap: 0; background: var(--bg);
+    padding: 32px var(--pad); border-top: 1px solid var(--border);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-links a { display: block; padding: 20px 0; font-size: 16px; color: var(--fg); }
+
+  /* Intro: stack vertically */
+  .about-intro { flex-direction: column; align-items: stretch; min-height: auto; }
+  .about-blob {
+    position: relative; top: auto; transform: none;
+    width: 100%; height: 300px;
+    border-radius: 0 0 60px 60px;
+  }
+  .about-portrait { left: 20%; top: -10%; width: 60%; height: 120%; }
+  .about-intro-text { margin-left: 0; padding: 40px var(--pad); }
+  .about-period { display: none; }
+
+  /* Work: stack */
+  .about-work-inner { grid-template-columns: 1fr; gap: 0; }
+  .about-work-image { justify-content: center; margin-top: 32px; }
+
+  /* Personal: stack */
+  .about-personal { grid-template-columns: 1fr; gap: 40px; min-height: auto; }
+  .about-photos { max-width: 480px; margin: 0 auto; }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .about-blob { height: 240px; border-radius: 0 0 40px 40px; }
+  .photo-tall { display: none; }
+  .about-photos { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── Nav ─── -->
+<nav>
+  <a class="nav-logo" href="index.html">Sateesh Kumar L</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#case-studies">Case Studies</a></li>
+    <li><a href="index.html#works">Works</a></li>
+    <li><a href="index.html#explorations">Explorations</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="about.html" style="color:var(--fg)">About</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── Section 1: Intro ─── -->
+<section class="about-intro">
+
+  <!-- Orange-red blob with portrait -->
+  <div class="about-blob">
+    <img
+      class="about-portrait"
+      src="https://www.figma.com/api/mcp/asset/4c94ae4c-2a93-485a-9398-f1289093f447"
+      alt="Sateesh Kumar L"
+    >
+  </div>
+
+  <!-- Text -->
+  <div class="about-intro-text">
+    <h1 class="about-name">Sateesh Kumar L</h1>
+    <p class="about-tagline">I'm Product designer. Mostly curious, always listening, always collaborative.</p>
+    <p class="about-bio">10+ years designing complex, high stakes products with teams at Amazon, Vodafone, Philips, GE, and UBS. I specialise in design systems and production ready UI that help teams move faster without losing consistency.</p>
+    <p class="about-ai">I explore <strong>AI tools</strong> in my free time, <strong>turning ideas into real things quickly.</strong></p>
+  </div>
+
+  <!-- Decorative period -->
+  <div class="about-period">.</div>
+
+  <!-- Gradient bottom line -->
+  <div class="about-intro-line"></div>
+
+</section>
+
+<!-- ─── Section 2: Work Experience ─── -->
+<section class="about-work">
+  <div class="about-work-inner">
+    <div>
+      <h2 class="about-work-heading">Work Experience</h2>
+      <div class="about-work-body">
+        <p>I started in print and frontend — found my home in product design and never looked back. Collaborators keep pointing out that I also have a sharp instinct for hyperlocal market intelligence. I didn't see it at first but I'm starting to trust it.</p>
+        <p>Right now I'm at <strong>HueGrid</strong> mostly deep in <strong>product design &amp; design systems</strong> with a little branding and no-code on the side.</p>
+      </div>
+    </div>
+    <div class="about-work-image">
+      <img
+        src="https://www.figma.com/api/mcp/asset/1a64cc1d-3119-4435-9b6b-f9d03cc41536"
+        alt=""
+      >
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="about-timeline">
+    <div class="tl-track">
+      <div class="tl-line"></div>
+      <div class="tl-progress"></div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Print Designer &amp; Frontend Dev</div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Web Designer</div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <div class="tl-label">UI Designer</div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <div class="tl-label">UX Designer</div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <div class="tl-label">UX &amp; No-Code Designer</div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Product &amp; No-Code Designer</div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Product Designer, No-Code &amp; AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Section 3: Personal Interests ─── -->
+<section class="about-personal">
+
+  <!-- Photo grid -->
+  <div class="about-photos">
+    <div class="photo photo-large">
+      <img
+        src="https://www.figma.com/api/mcp/asset/39aa6f45-2df1-4d06-916c-5b377947f7f4"
+        alt="Sateesh — portrait"
+      >
+    </div>
+    <div class="photo photo-small-top">
+      <img
+        src="https://www.figma.com/api/mcp/asset/59b7be5c-9507-4bf0-9397-887a14f71242"
+        alt="Food"
+      >
+    </div>
+    <div class="photo photo-landscape">
+      <img
+        src="https://www.figma.com/api/mcp/asset/43238cce-5aeb-4ff3-b6dd-97bf53d20cb9"
+        alt="Travel"
+      >
+    </div>
+    <div class="photo photo-tall">
+      <img
+        src="https://www.figma.com/api/mcp/asset/0c0ecca6-6c08-464b-ac35-24cab50e0858"
+        alt="City"
+      >
+    </div>
+  </div>
+
+  <!-- Text -->
+  <div class="about-personal-text">
+    <h2 class="about-personal-heading">Personal Interests</h2>
+    <p class="about-personal-body">Other than work, I'm interested in photography, music, good food, movies, and reading whatever catches the eye. Travels often, working from different cities and countries when possible. At home, the kids keep things grounded and real.</p>
+  </div>
+
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="footer-name">Sateesh Kumar L</div>
+  <div class="footer-copy">© 2025 · Senior Product Designer</div>
+  <div class="footer-links">
+    <a href="#">LinkedIn</a>
+    <a href="#">Dribbble</a>
+    <a href="#">HueGrid</a>
+    <a href="mailto:satishkumar.2163@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
