@@ -3,16 +3,17 @@
 html { scroll-behavior: smooth; }
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
+strong { font-weight: 500; }
 
 :root {
   --bg:        #FFFFFF;
   --fg:        #1C1814;
-  --accent:    #8A6A3E;
-  --muted:     #9A8E7E;
+  --accent:    #72562E;
+  --muted:     #6B5F52;
   --border:    #E2D9CC;
   --card-bg:   #F5F2EE;
-  --ff-disp:   'Cormorant Garamond', serif;
-  --ff-body:   'DM Sans', sans-serif;
+  --ff-disp:   'Sentient', Georgia, serif;
+  --ff-body:   'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --pad:       clamp(40px, 8vw, 120px);
   --max:       960px;
 }
@@ -79,10 +80,10 @@ body {
 .cs-title {
   font-family: var(--ff-disp);
   font-size: clamp(40px, 5.5vw, 76px);
-  font-weight: 300;
+  font-weight: 500;
   font-style: italic;
   line-height: 1.08;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   color: var(--fg);
   margin-bottom: 32px;
 }
@@ -164,9 +165,9 @@ body {
 .cs-section-title {
   font-family: var(--ff-disp);
   font-size: clamp(28px, 3.5vw, 44px);
-  font-weight: 300;
+  font-weight: 500;
   font-style: italic;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   line-height: 1.15;
   color: var(--fg);
   margin-bottom: 32px;
@@ -218,8 +219,8 @@ body {
 .cs-num-num {
   font-family: var(--ff-disp);
   font-size: 36px;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
   color: var(--accent);
   line-height: 1;
 }
@@ -246,8 +247,8 @@ body {
 .cs-quote-text {
   font-family: var(--ff-disp);
   font-size: clamp(22px, 2.6vw, 32px);
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
   line-height: 1.35;
   color: var(--fg);
   margin-bottom: 16px;
@@ -277,8 +278,8 @@ body {
 .cs-stat-value {
   font-family: var(--ff-disp);
   font-size: clamp(28px, 3.5vw, 40px);
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
   color: var(--accent);
   line-height: 1;
   margin-bottom: 10px;
@@ -368,12 +369,11 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
-  opacity: 0.6;
 }
 .cs-page-title {
   font-family: var(--ff-disp);
   font-size: clamp(17px, 1.8vw, 24px);
-  font-weight: 300;
+  font-weight: 500;
   font-style: italic;
   color: var(--fg);
   line-height: 1.25;

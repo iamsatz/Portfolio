@@ -1,0 +1,4 @@
+interface:
+  display_name: "Typeface Matchmaker"
+  short_description: "Find free fonts with paid-font taste"
+  default_prompt: "Use $typeface-matchmaker to suggest free font alternatives for this paid typeface list."

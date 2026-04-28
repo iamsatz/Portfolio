@@ -5,26 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Sateesh Kumar L</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,500,500i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
+strong { font-weight: 500; }
 
 /* ─── Variables ─── */
 :root {
   --bg:          #FFFFFF;
   --fg:          #1C1814;
-  --accent:      #8A6A3E;
-  --muted:       #9A8E7E;
+  --accent:      #72562E;
+  --muted:       #6B5F52;
   --border:      #E2D9CC;
   --card-bg:     #F5F2EE;
   --orange:      #FF6E45;
   --red:         #F52200;
-  --ff-disp:     'Cormorant Garamond', serif;
-  --ff-body:     'DM Sans', sans-serif;
+  --ff-disp:     'Sentient', Georgia, serif;
+  --ff-body:     'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --pad:         clamp(40px, 8vw, 120px);
 }
 
@@ -127,8 +131,9 @@ nav {
 .about-name {
   font-family: var(--ff-disp);
   font-size: clamp(40px, 4.5vw, 64px);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0;
   line-height: 1.05;
   color: var(--fg);
   margin-bottom: 20px;
@@ -136,7 +141,7 @@ nav {
 .about-tagline {
   font-size: clamp(16px, 1.7vw, 24px);
   font-weight: 300;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
   line-height: 1.3;
   color: var(--fg);
   margin-bottom: 20px;
@@ -196,8 +201,9 @@ nav {
 .about-work-heading {
   font-family: var(--ff-disp);
   font-size: clamp(28px, 2.5vw, 36px);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0;
   color: var(--fg);
   margin-bottom: 32px;
 }
@@ -271,14 +277,27 @@ nav {
   box-shadow: 0 0 0 4px rgba(255,110,69,0.18);
 }
 .tl-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   font-size: 11px;
   font-weight: 300;
   line-height: 1.5;
   color: var(--muted);
   text-align: center;
-  max-width: 92px;
+  max-width: 118px;
 }
 .tl-node:last-child .tl-label { color: var(--fg); font-weight: 500; }
+.tl-year {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.tl-role {
+  display: block;
+}
 
 /* ─── Section 3: Personal Interests ─── */
 .about-personal {
@@ -338,8 +357,9 @@ nav {
 .about-personal-heading {
   font-family: var(--ff-disp);
   font-size: clamp(28px, 2.5vw, 36px);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0;
   color: var(--fg);
   margin-bottom: 24px;
 }
@@ -362,8 +382,8 @@ footer {
 .footer-name {
   font-family: var(--ff-disp);
   font-size: 18px;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
   letter-spacing: 0.06em;
 }
 .footer-copy {
@@ -436,7 +456,6 @@ footer {
     <li><a href="index.html#works">Works</a></li>
     <li><a href="index.html#explorations">Explorations</a></li>
     <li><a href="index.html#contact">Contact</a></li>
-    <li><a href="about.html" style="color:var(--fg)">About</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -459,7 +478,7 @@ footer {
   <div class="about-intro-text">
     <h1 class="about-name">Sateesh Kumar L</h1>
     <p class="about-tagline">I'm Product designer. Mostly curious, always listening, always collaborative.</p>
-    <p class="about-bio">10+ years designing complex, high stakes products with teams at Amazon, Vodafone, Philips, GE, and UBS. I specialise in design systems and production ready UI that help teams move faster without losing consistency.</p>
+    <p class="about-bio">13 years designing complex, high stakes products with teams at Amazon, Vodafone, Philips, GE, and UBS. I specialise in design systems and production ready UI that help teams move faster without losing consistency.</p>
     <p class="about-ai">I explore <strong>AI tools</strong> in my free time, <strong>turning ideas into real things quickly.</strong></p>
   </div>
 
@@ -496,31 +515,31 @@ footer {
       <div class="tl-progress"></div>
       <div class="tl-node">
         <div class="tl-dot"></div>
-        <div class="tl-label">Print Designer &amp; Frontend Dev</div>
+        <div class="tl-label"><span class="tl-year">2012</span><span class="tl-role">UI Designer</span></div>
       </div>
       <div class="tl-node">
         <div class="tl-dot"></div>
-        <div class="tl-label">Web Designer</div>
+        <div class="tl-label"><span class="tl-year">2014</span><span class="tl-role">UI Designer</span></div>
       </div>
       <div class="tl-node">
         <div class="tl-dot"></div>
-        <div class="tl-label">UI Designer</div>
+        <div class="tl-label"><span class="tl-year">2019</span><span class="tl-role">Visual Designer</span></div>
       </div>
       <div class="tl-node">
         <div class="tl-dot"></div>
-        <div class="tl-label">UX Designer</div>
+        <div class="tl-label"><span class="tl-year">2020</span><span class="tl-role">UI Designer</span></div>
       </div>
       <div class="tl-node">
         <div class="tl-dot"></div>
-        <div class="tl-label">UX &amp; No-Code Designer</div>
+        <div class="tl-label"><span class="tl-year">2022</span><span class="tl-role">Senior UX Designer</span></div>
       </div>
       <div class="tl-node">
         <div class="tl-dot"></div>
-        <div class="tl-label">Product &amp; No-Code Designer</div>
+        <div class="tl-label"><span class="tl-year">2023</span><span class="tl-role">Lead UI &amp; UX Designer</span></div>
       </div>
       <div class="tl-node">
         <div class="tl-dot"></div>
-        <div class="tl-label">Product Designer, No-Code &amp; AI</div>
+        <div class="tl-label"><span class="tl-year">2025</span><span class="tl-role">Product Designer, No-Code &amp; AI</span></div>
       </div>
     </div>
   </div>

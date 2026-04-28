@@ -1,30 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-version="grey-to-black-logos-v2">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portfolio-version" content="grey-to-black-logos-v2">
 <title>Sateesh Kumar L, Product Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,500,500i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
+strong { font-weight: 500; }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
 
 /* ─── Variables ─── */
 :root {
+  color-scheme: light;
   --bg:        #FFFFFF;
+  --surface:   #FFFFFF;
+  --surface-strong: #FFFFFF;
   --fg:        #1C1814;
-  --accent:    #8A6A3E;
-  --muted:     #9A8E7E;
-  --border:    #E2D9CC;
-  --card-bg:   #F5F2EE;
-  --ff-disp:   'Cormorant Garamond', serif;
-  --ff-body:   'DM Sans', sans-serif;
+  --accent:    #72562E;
+  --muted:     #66594D;
+  --border:    #978B7C;
+  --card-bg:   #FFFFFF;
+  --nav-bg:    #FFFFFF;
+  --shadow:    rgba(28, 24, 20, 0.08);
+  --hero-bg:   #FFFFFF;
+  --hero-text-base: #66594D;
+  --hero-text-final: #1C1814;
+  --circle-ink: rgba(28, 24, 20, 0.26);
+  --circle-soft: rgba(114, 86, 46, 0.08);
+  --logo-muted-filter: grayscale(1) saturate(0) contrast(0.88) opacity(0.58);
+  --logo-hover-filter: none;
+  --ge-muted-filter: grayscale(1) invert(1) contrast(0.78) opacity(0.58);
+  --ge-hover-filter: invert(1);
+  --ff-disp:   'Sentient', Georgia, serif;
+  --ff-body:   'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --pad:       clamp(40px, 8vw, 120px);
   --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:        #12100E;
+  --surface:   rgba(18, 16, 14, 0.9);
+  --surface-strong: #1B1814;
+  --fg:        #F4EEE6;
+  --accent:    #D8B982;
+  --muted:     #C0B5A6;
+  --border:    #706658;
+  --card-bg:   rgba(32, 28, 23, 0.9);
+  --nav-bg:    rgba(18, 16, 14, 0.88);
+  --shadow:    rgba(0, 0, 0, 0.32);
+  --hero-bg:   #171513;
+  --hero-text-base: #C0B5A6;
+  --hero-text-final: #F4EEE6;
+  --circle-ink: rgba(244, 238, 230, 0.24);
+  --circle-soft: rgba(216, 185, 130, 0.16);
+  --logo-muted-filter: grayscale(1) saturate(0) invert(1) brightness(1.05) opacity(0.66);
+  --logo-hover-filter: grayscale(1) invert(1) brightness(1.12);
+  --ge-muted-filter: grayscale(1) opacity(0.66);
+  --ge-hover-filter: none;
 }
 
 /* ─── Base ─── */
@@ -35,6 +82,65 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.circle-field {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 16%, var(--circle-soft) 0, transparent 28%),
+    radial-gradient(circle at 8% 82%, var(--circle-soft) 0, transparent 24%);
+}
+.circle-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--hero-bg) 0%, transparent 22%, transparent 78%, var(--hero-bg) 100%);
+  opacity: 0.58;
+}
+.circle-field svg {
+  position: absolute;
+  inset: -8% -8%;
+  width: 116%;
+  height: 116%;
+}
+.circle-field ellipse {
+  fill: none;
+  stroke: var(--circle-ink);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.circle-field .e1 { stroke-opacity: 0.18; animation: circle-spin 128s linear infinite; }
+.circle-field .e2 { stroke-opacity: 0.22; animation: circle-spin 112s linear infinite reverse; }
+.circle-field .e3 { stroke-opacity: 0.28; animation: circle-spin 96s linear infinite; }
+.circle-field .e4 { stroke-opacity: 0.34; animation: circle-spin 78s linear infinite reverse; }
+.circle-field .e5 { stroke-opacity: 0.16; animation: circle-spin 118s linear infinite; }
+.circle-field .e6 { stroke-opacity: 0.3; animation: circle-spin 64s linear infinite reverse; }
+.circle-field .e7 { stroke-opacity: 0.36; animation: circle-spin 52s linear infinite; }
+.circle-field .e8 { stroke-opacity: 0.16; animation: circle-spin 88s linear infinite reverse; }
+@keyframes circle-spin { to { transform: rotate(360deg); } }
+@keyframes text-read-darken {
+  0% {
+    color: var(--hero-text-base);
+    opacity: 0.82;
+  }
+  100% {
+    color: var(--hero-text-final);
+    opacity: 1;
+  }
+}
+nav,
+.hero,
+section,
+.divider,
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ─── Nav ─── */
@@ -47,7 +153,9 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--pad);
-  background: var(--bg);
+  background: var(--nav-bg);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
   border-bottom: 1px solid var(--border);
 }
 .nav-logo {
@@ -67,6 +175,47 @@ nav {
   color: var(--muted);
 }
 .nav-links a:hover { color: var(--fg); }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+.theme-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  fill: none;
+}
+.theme-icon--moon {
+  display: none;
+}
+html[data-theme="dark"] .theme-icon--sun {
+  display: none;
+}
+html[data-theme="dark"] .theme-icon--moon {
+  display: block;
+}
 .nav-cta {
   font-family: var(--ff-body);
   font-size: 11px;
@@ -110,11 +259,26 @@ nav {
 
 /* ─── Hero ─── */
 .hero {
-  padding: clamp(80px, 10vw, 140px) var(--pad) clamp(60px, 7vw, 96px);
-  border-bottom: 1px solid var(--border);
+  position: relative;
+  min-height: calc(100vh - 72px);
+  padding: clamp(72px, 8vw, 120px) var(--pad);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--hero-bg);
 }
-.hero-intro { max-width: 700px; margin: 0 auto; }
+.hero > :not(.circle-field) {
+  position: relative;
+  z-index: 2;
+}
+.hero-intro {
+  width: min(68vw, 860px);
+  max-width: 100%;
+  margin: 0 auto;
+}
 .hero-avatar {
   width: 80px;
   height: 80px;
@@ -130,34 +294,96 @@ nav {
 .hero-intro p {
   font-family: var(--ff-disp);
   font-size: clamp(22px, 2.8vw, 40px);
-  font-weight: 300;
+  font-weight: 500;
+  font-style: italic;
   line-height: 1.5;
-  color: var(--muted);
+  color: var(--hero-text-base);
   margin-bottom: clamp(16px, 2vw, 28px);
 }
+.hero-line {
+  display: block;
+  color: var(--hero-text-base);
+  animation: text-read-darken 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-line:nth-child(1) { animation-delay: 0.12s; }
+.hero-line:nth-child(2) { animation-delay: 0.52s; }
+.hero-line:nth-child(3) { animation-delay: 0.92s; }
+.hero-line:nth-child(4) { animation-delay: 1.32s; }
 .hero-intro p:last-child { margin-bottom: 0; }
-.hero-intro strong { font-weight: 400; color: var(--fg); }
+.hero-intro strong { font-weight: 500; color: inherit; }
 .hero-clients {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: clamp(24px, 5vw, 64px);
+  gap: clamp(20px, 3vw, 40px);
   margin-top: clamp(40px, 5vw, 64px);
-  padding-top: clamp(28px, 3vw, 40px);
-  border-top: 1px solid var(--border);
 }
-.hero-clients span {
-  font-family: var(--ff-body);
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  opacity: 0.5;
+.client-logo-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 108px;
+  height: 42px;
+  overflow: visible;
+}
+.client-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: var(--logo-muted-filter);
+  mix-blend-mode: multiply;
+  transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+html[data-theme="dark"] .client-logo {
+  mix-blend-mode: normal;
+}
+.client-logo-frame--amazon {
+  width: clamp(90px, 7.4vw, 108px);
+  transform: translateY(-1px);
+}
+.client-logo--amazon {
+  width: clamp(82px, 6.8vw, 96px);
+}
+.client-logo-frame--vodafone {
+  width: clamp(116px, 9.2vw, 134px);
+}
+.client-logo-frame--philips {
+  width: clamp(104px, 8.2vw, 120px);
+}
+.client-logo--vodafone {
+  width: clamp(110px, 8.8vw, 128px);
+}
+.client-logo--philips {
+  width: clamp(98px, 7.7vw, 112px);
+}
+.client-logo-frame--ge {
+  width: clamp(152px, 12.4vw, 176px);
+  height: 42px;
+}
+.client-logo-frame--ge .client-logo {
+  filter: var(--ge-muted-filter);
+  width: clamp(142px, 11.8vw, 168px);
+  height: auto;
+  max-width: none;
+}
+.client-logo--ubs {
+  width: clamp(72px, 6vw, 84px);
+  transform: translateY(-1px);
+}
+.client-logo-frame:hover .client-logo {
+  filter: var(--logo-hover-filter);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+.client-logo-frame--ge:hover .client-logo {
+  filter: var(--ge-hover-filter);
 }
 
 /* ─── Section Base ─── */
 section {
   padding: clamp(60px, 8vw, 120px) var(--pad);
+  scroll-margin-top: 88px;
 }
 .section-label {
   font-size: 11px;
@@ -170,9 +396,9 @@ section {
 .section-title {
   font-family: var(--ff-disp);
   font-size: clamp(28px, 3.5vw, 52px);
-  font-weight: 300;
+  font-weight: 500;
   font-style: italic;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   line-height: 1.1;
   color: var(--fg);
   margin-bottom: 16px;
@@ -197,9 +423,8 @@ section {
 /* ─── Projects ─── */
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--border);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: clamp(20px, 3vw, 32px);
 }
 
 .project-card {
@@ -228,7 +453,9 @@ section {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   transition: border-color 0.25s;
 }
@@ -241,8 +468,7 @@ section {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: auto;
-  padding-bottom: 80px;
+  margin-bottom: clamp(32px, 4vw, 56px);
 }
 .proj-company {
   font-family: var(--ff-body);
@@ -255,10 +481,10 @@ section {
   transition: color 0.25s;
 }
 .proj-title {
-  font-family: var(--ff-disp);
+  font-family: var(--ff-body);
   font-size: clamp(22px, 2.5vw, 34px);
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
   line-height: 1.15;
   color: var(--fg);
   margin-bottom: 16px;
@@ -359,14 +585,27 @@ section {
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 .tl-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   font-size: 11px;
   font-weight: 300;
   line-height: 1.4;
   color: var(--muted);
   text-align: center;
-  max-width: 88px;
+  max-width: 112px;
 }
 .tl-item:last-child .tl-label { color: var(--fg); font-weight: 500; }
+.tl-year {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.tl-role {
+  display: block;
+}
 
 /* ─── About ─── */
 .about-grid {
@@ -377,7 +616,7 @@ section {
 }
 .about-text .section-title {
   font-size: clamp(24px, 2.8vw, 40px);
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
   margin-bottom: 24px;
 }
@@ -411,7 +650,6 @@ section {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
-  opacity: 0.5;
   font-family: monospace;
   font-weight: 400;
 }
@@ -440,10 +678,10 @@ section {
   color: var(--muted);
 }
 .exp-tile-title {
-  font-family: var(--ff-disp);
+  font-family: var(--ff-body);
   font-size: 20px;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
   color: var(--fg);
   line-height: 1.2;
 }
@@ -459,8 +697,49 @@ section {
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--border);
+  color: var(--muted);
   margin-top: 16px;
+}
+
+/* ─── Image Wall ─── */
+.image-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+.image-card {
+  margin: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+}
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.image-card figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 10px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  border-top: 1px solid var(--border);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.image-empty {
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 13px;
+  padding: 20px;
+  text-align: center;
 }
 
 /* ─── Contact ─── */
@@ -479,8 +758,8 @@ section {
   display: inline-block;
   font-family: var(--ff-disp);
   font-size: clamp(22px, 2.5vw, 36px);
-  font-style: italic;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: 500;
   color: var(--fg);
   border-bottom: 1px solid var(--border);
   padding-bottom: 6px;
@@ -509,8 +788,8 @@ footer {
 .footer-name {
   font-family: var(--ff-disp);
   font-size: 18px;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
   letter-spacing: 0.06em;
 }
 .footer-copy {
@@ -531,21 +810,28 @@ footer {
 /* ─── Case Studies ─── */
 .cs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: clamp(20px, 3vw, 32px);
 }
 .cs-card {
   display: flex;
   flex-direction: column;
-  background: var(--bg);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
+  min-height: 100%;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
   text-decoration: none;
   color: inherit;
 }
-.cs-card:hover { border-color: var(--accent); }
+.cs-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(28, 24, 20, 0.07);
+  box-shadow: 0 16px 40px var(--shadow);
+}
 .cs-card:hover .cs-title { color: var(--accent); }
 .cs-card:hover .cs-arrow { opacity: 1; transform: translate(0, 0); }
 
@@ -560,7 +846,7 @@ footer {
 .cs-img svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
 .cs-body {
-  padding: 28px 32px 32px;
+  padding: clamp(24px, 3vw, 36px);
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -574,56 +860,52 @@ footer {
   margin-bottom: 12px;
 }
 .cs-title {
-  font-family: var(--ff-disp);
-  font-size: clamp(20px, 2vw, 28px);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.2;
+  font-family: var(--ff-body);
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.18;
   color: var(--fg);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   transition: color 0.25s;
 }
 .cs-desc {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.65;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.68;
   color: var(--muted);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   flex: 1;
 }
 .cs-stats {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
-  padding: 12px 0;
+  padding: 16px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 .cs-stat {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
   color: var(--fg);
   background: var(--card-bg);
-  padding: 3px 10px;
+  padding: 5px 10px;
 }
 .cs-meta {
   display: flex;
-  gap: 12px;
+  gap: 8px 10px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 .cs-meta span {
   font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-}
-.cs-meta span + span::before {
-  content: '·';
-  margin-right: 12px;
 }
 .cs-arrow {
   display: inline-flex;
@@ -645,14 +927,13 @@ footer {
 
 /* ─── Responsive ─── */
 @media (max-width: 1024px) {
-  .cs-grid { grid-template-columns: repeat(2, 1fr); }
-  .cs-grid .cs-card:nth-child(3) { grid-column: span 2; }
   .exp-tiles { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
   /* Nav: hamburger */
   .nav-toggle { display: block; }
+  .nav-actions { gap: 14px; }
   .nav-links {
     position: fixed;
     top: 72px;
@@ -661,7 +942,9 @@ footer {
     bottom: 0;
     flex-direction: column;
     gap: 0;
-    background: var(--bg);
+    background: var(--nav-bg);
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
     padding: 32px var(--pad);
     transform: translateX(100%);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -680,21 +963,29 @@ footer {
   }
 
   /* Hero */
+  .hero { min-height: calc(100vh - 72px); }
+  .hero-intro { width: min(100%, 700px); }
   .hero-intro p { font-size: clamp(20px, 5.5vw, 28px); }
-  .hero-clients { flex-wrap: wrap; gap: 14px 24px; }
+  .hero-clients { flex-wrap: wrap; gap: 18px 22px; }
+  .client-logo-frame { width: 94px; height: 40px; }
+  .client-logo-frame--amazon { width: 94px; }
+  .client-logo-frame--vodafone { width: 126px; }
+  .client-logo-frame--philips { width: 106px; }
+  .client-logo-frame--ge { width: 156px; }
+  .client-logo--amazon { width: 84px; }
+  .client-logo--vodafone { width: 116px; }
+  .client-logo--philips { width: 100px; }
+  .client-logo-frame--ge .client-logo { width: 146px; }
 
   /* Section header */
   .section-header { flex-direction: column; align-items: flex-start; gap: 24px; }
 
   /* Case Studies */
-  .cs-grid { grid-template-columns: 1fr; }
-  .cs-grid .cs-card:nth-child(3) { grid-column: auto; }
   .cs-body { padding: 24px 24px 28px; }
 
   /* Projects */
-  .projects-grid { grid-template-columns: 1fr; }
   .proj-content { padding: 32px 28px 32px; }
-  .proj-num { padding-bottom: 48px; }
+  .proj-num { margin-bottom: 48px; }
 
   /* Experience */
   .exp-text { grid-template-columns: 1fr; gap: 32px; margin-bottom: 56px; }
@@ -743,11 +1034,41 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .hero-clients { gap: 14px 18px; }
-  .hero-clients span { font-size: 11px; }
+  .hero-clients { gap: 16px 20px; }
+  .client-logo-frame { width: 84px; height: 36px; }
+  .client-logo-frame--amazon { width: 88px; }
+  .client-logo-frame--vodafone { width: 118px; }
+  .client-logo-frame--philips { width: 102px; }
+  .client-logo-frame--ge { width: 148px; height: 38px; }
+  .client-logo--amazon { width: 78px; }
+  .client-logo--vodafone { width: 110px; }
+  .client-logo--philips { width: 96px; }
+  .client-logo-frame--ge .client-logo { width: 138px; }
+  .client-logo--ubs { width: 72px; }
   .about-photos { grid-template-columns: 1fr; grid-template-rows: 280px 180px 180px; }
   .about-photos .photo-cell:first-child { grid-row: auto; }
   .exp-tiles { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-intro p {
+    animation: none;
+    color: var(--muted);
+    background: none;
+  }
+  .hero-line {
+    animation: none;
+    color: var(--muted);
+    background: none;
+  }
+  .hero-intro strong { color: var(--fg); }
+  .client-logo { animation: none; }
 }
 </style>
 </head>
@@ -761,26 +1082,61 @@ footer {
     <li><a href="#works">Works</a></li>
     <li><a href="#explorations">Explorations</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="about.html">About</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+      <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.5"></circle>
+        <path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4L5.6 5.6"></path>
+      </svg>
+      <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 14.3A8.3 8.3 0 0 1 9.7 4a8.8 8.8 0 1 0 10.3 10.3Z"></path>
+      </svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- ─── Hero ─── -->
 <div class="hero" id="work">
-  <div class="hero-intro">
-<p>Hey there 👋 I'm <strong>Sateesh Kumar L</strong>, a <strong>Digital Product Designer</strong>.</p>
-    <p>12 years. <strong>Fortune 50</strong> to startups. <strong>AI design</strong>, interfaces, icons, systems.</p>
-    <p><strong>Photography</strong> 📸 and <strong>short films</strong> 🎬 on the side.</p>
+  <div class="circle-field" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <ellipse class="e1" cx="1400" cy="800" rx="1800" ry="1200"></ellipse>
+      <ellipse class="e2" cx="1200" cy="750" rx="900" ry="550" transform="rotate(-15 1200 750)"></ellipse>
+      <ellipse class="e3" cx="1280" cy="780" rx="600" ry="400" transform="rotate(20 1280 780)"></ellipse>
+      <ellipse class="e4" cx="1300" cy="770" rx="400" ry="260"></ellipse>
+      <ellipse class="e5" cx="200" cy="200" rx="380" ry="240" transform="rotate(25 200 200)"></ellipse>
+      <ellipse class="e6" cx="1330" cy="790" rx="200" ry="130"></ellipse>
+      <ellipse class="e7" cx="1340" cy="785" rx="120" ry="80"></ellipse>
+      <ellipse class="e8" cx="800" cy="450" rx="500" ry="320" transform="rotate(-10 800 450)"></ellipse>
+    </svg>
   </div>
-  <div class="hero-clients">
-    <span>Amazon</span>
-    <span>Vodafone</span>
-    <span>Philips</span>
-    <span>GE</span>
-    <span>UBS</span>
+  <div class="hero-intro">
+    <p>
+      <span class="hero-line"><strong>AI-native Digital Product Designer</strong></span>
+      <span class="hero-line">with <strong>12+&nbsp;years</strong>, thoughtfully blending systems,</span>
+      <span class="hero-line">interfaces, and storytelling to create meaningful,</span>
+      <span class="hero-line">human-centered products.</span>
+    </p>
+  </div>
+  <div class="hero-clients" aria-label="Selected client logos">
+    <span class="client-logo-frame client-logo-frame--amazon">
+      <img class="client-logo client-logo--amazon" src="assets/logos/amazon.webp" alt="Amazon logo" loading="lazy">
+    </span>
+    <span class="client-logo-frame client-logo-frame--vodafone">
+      <img class="client-logo client-logo--vodafone" src="assets/logos/vodafone-2017-logo.svg" alt="Vodafone logo" loading="lazy">
+    </span>
+    <span class="client-logo-frame client-logo-frame--philips">
+      <img class="client-logo client-logo--philips" src="assets/logos/philips-mark-transparent.png" alt="Philips logo" loading="lazy">
+    </span>
+    <span class="client-logo-frame client-logo-frame--ge">
+      <img class="client-logo client-logo--ge" src="assets/logos/ge-aerospace.svg" alt="GE Aerospace logo" loading="lazy">
+    </span>
+    <span class="client-logo-frame client-logo-frame--ubs">
+      <img class="client-logo client-logo--ubs" src="assets/logos/ubs.svg" alt="UBS logo" loading="lazy">
+    </span>
   </div>
 </div>
 
@@ -887,7 +1243,7 @@ footer {
     <div class="section-header-text">
       <div class="section-label">Selected Work</div>
       <h2 class="section-title">Projects</h2>
-      <p class="section-sub">A decade of designing for complex systems, from enterprise design languages to consumer-facing apps.</p>
+      <p class="section-sub">13 years of designing for complex systems, from enterprise design languages to consumer-facing apps.</p>
     </div>
   </div>
 
@@ -939,14 +1295,164 @@ footer {
 
     <div class="project-card">
       <div class="proj-content">
-        <div class="proj-num">04 · Platform Design</div>
+        <div class="proj-num">04 · Compliance UX</div>
         <div class="proj-company">UBS</div>
-        <div class="proj-title">Financial Services UX</div>
-        <p class="proj-desc">Product design for financial services — complex workflows, compliance-driven constraints, and high-stakes user decisions that leave no room for ambiguity.</p>
+        <div class="proj-title">Compliance Portal</div>
+        <p class="proj-desc">Directed a team of five designers on a banking compliance portal for assessing policy and procedure effectiveness, improving compliance metrics by 20%.</p>
         <div class="proj-tags">
           <span class="proj-tag">Fintech</span>
-          <span class="proj-tag">Enterprise UX</span>
-          <span class="proj-tag">Complex Systems</span>
+          <span class="proj-tag">Compliance</span>
+          <span class="proj-tag">Team Lead</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">05 · Civil Engineering</div>
+        <div class="proj-company">Accolite Digital</div>
+        <div class="proj-title">InfraQ</div>
+        <p class="proj-desc">Redesigned a mobile Q&amp;A app for civil engineering professionals and students, improving usability and helping raise retention by 78%.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Mobile UX</span>
+          <span class="proj-tag">Community</span>
+          <span class="proj-tag">Retention</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">06 · Insurance</div>
+        <div class="proj-company">The Baldwin Group</div>
+        <div class="proj-title">BRP Insurance</div>
+        <p class="proj-desc">Conceptualised comparison workflows for sales representatives to evaluate insurance policies by parameters, reducing task completion time by 15%.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Workflow</span>
+          <span class="proj-tag">Sales Tools</span>
+          <span class="proj-tag">Sprint</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">07 · Design System</div>
+        <div class="proj-company">Huddl.ai</div>
+        <div class="proj-title">Meeting Platform System</div>
+        <p class="proj-desc">Created and maintained a scalable design system for a Zoom and Teams alternative, supporting consistency across platform surfaces.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Design System</span>
+          <span class="proj-tag">SaaS</span>
+          <span class="proj-tag">Collaboration</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">08 · Warehouse Ops</div>
+        <div class="proj-company">Farmrevv</div>
+        <div class="proj-title">Produce Warehouse App</div>
+        <p class="proj-desc">Designed a mobile product for vegetable and fruit warehouse managers, improving operational efficiency by 22%.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Mobile App</span>
+          <span class="proj-tag">Operations</span>
+          <span class="proj-tag">Agritech</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">09 · Mac Utility</div>
+        <div class="proj-company">ClearVoice</div>
+        <div class="proj-title">Noise Cancellation App</div>
+        <p class="proj-desc">Designed a macOS menu bar interface for call noise cancellation, focusing on a lightweight and instantly understandable control surface.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">MacOS</span>
+          <span class="proj-tag">Utility</span>
+          <span class="proj-tag">UI Design</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">10 · IoT</div>
+        <div class="proj-company">Hogar</div>
+        <div class="proj-title">Smart Switch Interfaces</div>
+        <p class="proj-desc">Collaborated on wall-mounted IoT switch control interfaces across three device sizes, balancing physical constraints with clear interaction design.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">IoT</span>
+          <span class="proj-tag">Responsive UI</span>
+          <span class="proj-tag">Devices</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">11 · ICU Monitoring</div>
+        <div class="proj-company">Novartis</div>
+        <div class="proj-title">Patient Monitoring Tablet App</div>
+        <p class="proj-desc">Collaborated on a tablet interface for hospitals to monitor ICU patients and review critical care information.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Healthcare</span>
+          <span class="proj-tag">Tablet UI</span>
+          <span class="proj-tag">ICU</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">12 · Analytics</div>
+        <div class="proj-company">Vizury</div>
+        <div class="proj-title">Retargeting Dashboard</div>
+        <p class="proj-desc">Created a desktop dashboard interface for retargeting analytics, helping teams read campaign and performance signals more clearly.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Dashboard</span>
+          <span class="proj-tag">Analytics</span>
+          <span class="proj-tag">Desktop UI</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">13 · Mobile Video</div>
+        <div class="proj-company">Tufono</div>
+        <div class="proj-title">Video Calling App</div>
+        <p class="proj-desc">Designed mobile workflows and interface patterns for a video calling application.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Mobile UI</span>
+          <span class="proj-tag">Video</span>
+          <span class="proj-tag">Flows</span>
+        </div>
+        <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-content">
+        <div class="proj-num">14 · Mobile Web</div>
+        <div class="proj-company">Isha Foundation</div>
+        <div class="proj-title">Campaign Analytics Interface</div>
+        <p class="proj-desc">Collaborated on a mobile web app interface for campaign analytics and reporting workflows.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Mobile Web</span>
+          <span class="proj-tag">Analytics</span>
+          <span class="proj-tag">Reporting</span>
         </div>
         <span class="proj-arrow">Details on request <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </div>
@@ -976,13 +1482,13 @@ footer {
     <div class="timeline-track">
       <div class="timeline-line"></div>
       <div class="timeline-progress"></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Print Designer &amp; Frontend Dev</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Web Designer</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">UI Designer</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">UX Designer</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">UX &amp; No-Code Designer</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Product &amp; No-Code Designer</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Product Designer, No-Code &amp; AI</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label"><span class="tl-year">2012</span><span class="tl-role">UI Designer</span></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label"><span class="tl-year">2014</span><span class="tl-role">UI Designer</span></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label"><span class="tl-year">2019</span><span class="tl-role">Visual Designer</span></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label"><span class="tl-year">2020</span><span class="tl-role">UI Designer</span></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label"><span class="tl-year">2022</span><span class="tl-role">Senior UX Designer</span></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label"><span class="tl-year">2023</span><span class="tl-role">Lead UI &amp; UX Designer</span></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-label"><span class="tl-year">2025</span><span class="tl-role">Product Designer, No-Code &amp; AI</span></div></div>
     </div>
   </div>
 </section>
@@ -1068,6 +1574,21 @@ footer {
   </div>
 </section>
 
+<!-- ─── Image Wall ─── -->
+<div class="divider"></div>
+<section id="images">
+  <div class="section-header">
+    <div class="section-header-text">
+      <div class="section-label">Image Wall</div>
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-sub">Recent visual captures and references.</p>
+    </div>
+  </div>
+  <div id="imageGrid" class="image-wall-grid">
+    <div class="image-empty">Add images to assets/images to populate this gallery.</div>
+  </div>
+</section>
+
 <!-- ─── Contact ─── -->
 <div class="divider"></div>
 <section id="contact">
@@ -1097,8 +1618,75 @@ footer {
 </footer>
 
 <script>
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
+  const imageGrid = document.getElementById('imageGrid');
+
+  const savedTheme = localStorage.getItem('portfolio-theme-grey-to-black-logos-v2');
+  let activeTheme = savedTheme || 'light';
+
+  function setTheme(theme) {
+    activeTheme = theme;
+    root.setAttribute('data-theme', theme);
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    const actionLabel = nextTheme === 'dark' ? 'Switch to dark mode' : 'Switch to light mode';
+    themeToggle.setAttribute('aria-label', actionLabel);
+    themeToggle.setAttribute('title', actionLabel);
+  }
+
+  async function loadImageWall() {
+    if (!imageGrid) return;
+    const exts = ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.avif', '.svg'];
+    try {
+      const response = await fetch('assets/images/');
+      if (!response.ok) throw new Error('Folder listing unavailable');
+      const markup = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(markup, 'text/html');
+      const links = Array.from(doc.querySelectorAll('a[href]'));
+      const files = links
+        .map(link => link.getAttribute('href') || '')
+        .filter(name => name && !name.endsWith('/') && exts.some(ext => name.toLowerCase().endsWith(ext)))
+        .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+
+      imageGrid.innerHTML = '';
+      if (!files.length) {
+        imageGrid.innerHTML = '<div class="image-empty">Add images to assets/images to populate this gallery.</div>';
+        return;
+      }
+
+      for (const fileName of files) {
+        const figure = document.createElement('figure');
+        figure.className = 'image-card';
+
+        const image = document.createElement('img');
+        image.src = `assets/images/${fileName}`;
+        image.alt = fileName.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ');
+        image.loading = 'lazy';
+
+        const caption = document.createElement('figcaption');
+        caption.textContent = fileName.replace(/\.[^.]+$/, '');
+
+        figure.appendChild(image);
+        figure.appendChild(caption);
+        imageGrid.appendChild(figure);
+      }
+    } catch (error) {
+      imageGrid.innerHTML = '<div class="image-empty">Image folder ready at assets/images.</div>';
+    }
+  }
+
+  setTheme(activeTheme);
+  loadImageWall();
+
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('portfolio-theme-grey-to-black-logos-v2', nextTheme);
+    setTheme(nextTheme);
+  });
+
   navToggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     navToggle.classList.toggle('open', open);
