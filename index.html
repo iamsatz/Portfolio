@@ -844,6 +844,13 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 .cs-img svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cs-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .cs-body {
   padding: clamp(24px, 3vw, 36px);
@@ -1152,14 +1159,9 @@ footer {
 
   <div class="cs-grid">
 
-    <a class="cs-card" href="case-studies/aampe.html">
+    <a class="cs-card" href="case-studies/aampe/">
       <div class="cs-img">
-        <svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
-          <rect width="480" height="270" fill="var(--card-bg)"/>
-          <line x1="0" y1="0" x2="480" y2="270" stroke="var(--border)" stroke-width="1"/>
-          <line x1="480" y1="0" x2="0" y2="270" stroke="var(--border)" stroke-width="1"/>
-          <text x="240" y="141" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--muted)">1600 × 900</text>
-        </svg>
+        <img src="assets/case-studies/aampe/card-preview.png" alt="Aampe case study preview" loading="lazy">
       </div>
       <div class="cs-body">
         <div class="cs-num">01 — Aampe</div>
@@ -1179,14 +1181,9 @@ footer {
       </div>
     </a>
 
-    <a class="cs-card" href="case-studies/rhythm.html">
+    <a class="cs-card" href="case-studies/rhythm-healthcare/">
       <div class="cs-img">
-        <svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
-          <rect width="480" height="270" fill="var(--card-bg)"/>
-          <line x1="0" y1="0" x2="480" y2="270" stroke="var(--border)" stroke-width="1"/>
-          <line x1="480" y1="0" x2="0" y2="270" stroke="var(--border)" stroke-width="1"/>
-          <text x="240" y="141" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--muted)">1600 × 900</text>
-        </svg>
+        <img src="assets/case-studies/rhythm-healthcare/card-preview.png" alt="Rhythm Healthcare case study preview" loading="lazy">
       </div>
       <div class="cs-body">
         <div class="cs-num">02 — Rhythm Healthcare</div>
@@ -1205,14 +1202,9 @@ footer {
       </div>
     </a>
 
-    <a class="cs-card" href="case-studies/first-responder.html">
+    <a class="cs-card" href="case-studies/first-responder/">
       <div class="cs-img">
-        <svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
-          <rect width="480" height="270" fill="var(--card-bg)"/>
-          <line x1="0" y1="0" x2="480" y2="270" stroke="var(--border)" stroke-width="1"/>
-          <line x1="480" y1="0" x2="0" y2="270" stroke="var(--border)" stroke-width="1"/>
-          <text x="240" y="141" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--muted)">1600 × 900</text>
-        </svg>
+        <img src="assets/case-studies/first-responder/card-preview.png" alt="First Responder case study preview" loading="lazy">
       </div>
       <div class="cs-body">
         <div class="cs-num">03 — First Responder</div>
@@ -1577,13 +1569,6 @@ footer {
 <!-- ─── Image Wall ─── -->
 <div class="divider"></div>
 <section id="images">
-  <div class="section-header">
-    <div class="section-header-text">
-      <div class="section-label">Image Wall</div>
-      <h2 class="section-title">Gallery</h2>
-      <p class="section-sub">Recent visual captures and references.</p>
-    </div>
-  </div>
   <div id="imageGrid" class="image-wall-grid">
     <div class="image-empty">Add images to assets/images to populate this gallery.</div>
   </div>
