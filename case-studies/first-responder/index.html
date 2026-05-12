@@ -15,10 +15,21 @@
 
 <nav class="cs-nav">
   <a class="cs-nav-logo" href="../../index.html">Sateesh Kumar L</a>
-  <a class="cs-nav-back" href="../../index.html#case-studies">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg>
-    All Case Studies
-  </a>
+  <div class="cs-nav-actions">
+    <a class="cs-nav-back" href="../../index.html#case-studies">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg>
+      <span class="cs-nav-back-text">All Case Studies</span>
+    </a>
+    <button class="cs-theme-toggle" id="csThemeToggle" type="button" aria-label="Switch to dark mode">
+      <svg class="cs-theme-icon cs-theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.5"></circle>
+        <path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4L5.6 5.6"></path>
+      </svg>
+      <svg class="cs-theme-icon cs-theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 14.3A8.3 8.3 0 0 1 9.7 4a8.8 8.8 0 1 0 10.3 10.3Z"></path>
+      </svg>
+    </button>
+  </div>
 </nav>
 
 <!-- ─── Hero ─── -->
@@ -244,7 +255,7 @@
 
 <!-- ─── Prev / Next ─── -->
 <nav class="cs-pagination">
-  <a class="cs-page-link cs-page-prev" href="../rhythm-healthcare/">
+  <a class="cs-page-link cs-page-prev" href="../rhythm-healthcare/index.html">
     <div class="cs-page-dir"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Previous Case Study</div>
     <div class="cs-page-num">02 — Rhythm Healthcare</div>
     <div class="cs-page-title">Bringing Design Consistency to a Cardiac Monitoring Platform</div>
@@ -258,5 +269,33 @@
   <a href="../../index.html#case-studies">← Back to all case studies</a>
 </footer>
 
+<script>
+  const root = document.documentElement;
+  const csThemeToggle = document.getElementById('csThemeToggle');
+  const THEME_KEY = 'portfolio-theme-grey-to-black-logos-v2';
+  const saved = localStorage.getItem(THEME_KEY);
+  let activeTheme = saved || 'light';
+
+  function setTheme(theme) {
+    activeTheme = theme;
+    root.setAttribute('data-theme', theme);
+    const next = theme === 'dark' ? 'light' : 'dark';
+    const label = next === 'dark' ? 'Switch to dark mode' : 'Switch to light mode';
+    if (csThemeToggle) {
+      csThemeToggle.setAttribute('aria-label', label);
+      csThemeToggle.setAttribute('title', label);
+    }
+  }
+
+  setTheme(activeTheme);
+
+  if (csThemeToggle) {
+    csThemeToggle.addEventListener('click', () => {
+      const next = activeTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem(THEME_KEY, next);
+      setTheme(next);
+    });
+  }
+</script>
 </body>
 </html>

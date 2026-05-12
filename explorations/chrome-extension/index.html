@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-version="exploration-detail-v1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portfolio-version" content="exploration-detail-v1">
+<title>Browser Workflow Tool, Sateesh Kumar L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,500,500i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles/site.css">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../../index.html#top">Sateesh Kumar L</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html#case-studies">Case Studies</a></li>
+    <li><a href="../../works/index.html">Works</a></li>
+    <li><a href="../../index.html#explorations" aria-current="page">Explorations</a></li>
+    <li><a href="../../about.html">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+      <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4L5.6 5.6"></path></svg>
+      <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.3A8.3 8.3 0 0 1 9.7 4a8.8 8.8 0 1 0 10.3 10.3Z"></path></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="section-label">Side Experiment</div>
+    <h1 class="page-title">Browser Workflow Tool</h1>
+    <p class="section-sub">A Chrome extension experiment for reducing repeated browser actions and helping everyday workflows feel lighter.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Concept Notes</div>
+    <div class="detail-copy">
+      <p>This started as a small utility idea: when people repeat the same browser steps every day, the product should remember the pattern and make the next action easier.</p>
+      <p>The exploration focuses on low-friction capture, fast recall, and a calm interface that stays out of the way until it is needed.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Problem</span><span>Browser workflows are often fragmented across tabs, tools, saved links, and repeated manual actions.</span></div>
+        <div class="detail-list-item"><span>Direction</span><span>A lightweight extension that helps users save, recall, and reuse common browser tasks.</span></div>
+        <div class="detail-list-item"><span>Status</span><span>Side project in progress. Screens and build notes can be shared on request.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact" class="detail-contact">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Want to see more?</h2>
+      <p class="contact-sub">I can walk through the idea, prototype direction, and what I learned from building it.</p>
+      <a class="contact-email" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-name">Sateesh Kumar L</div>
+  <div class="footer-links">
+    <a href="../../index.html#explorations">All explorations</a>
+    <a href="mailto:hola@iamsatz.me">Email</a>
+  </div>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme === 'dark') root.setAttribute('data-theme', 'dark');
+  function updateThemeLabel() {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  updateThemeLabel();
+  themeToggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) { root.removeAttribute('data-theme'); localStorage.setItem('portfolio-theme', 'light'); }
+    else { root.setAttribute('data-theme', 'dark'); localStorage.setItem('portfolio-theme', 'dark'); }
+    updateThemeLabel();
+  });
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
