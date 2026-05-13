@@ -291,6 +291,81 @@ html[data-theme="dark"] .theme-icon--moon {
 .hero-line:nth-child(4) { animation-delay: 1.32s; }
 .hero-intro p:last-child { margin-bottom: 0; }
 .hero-intro strong { font-weight: 500; color: inherit; }
+.hero--b {
+  min-height: calc(100vh - 72px);
+  align-items: stretch;
+  justify-content: center;
+  padding: clamp(72px, 8vw, 112px) var(--pad) clamp(56px, 7vw, 96px);
+  text-align: left;
+  background: #fff;
+}
+.hero--b .circle-field {
+  display: none;
+}
+.hero--b::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: clamp(54px, 8vw, 88px);
+  bottom: clamp(54px, 7vw, 84px);
+  left: var(--pad);
+  width: 3px;
+  background: #FA4122;
+}
+.hero--b .hero-intro {
+  width: min(100%, 1540px);
+  margin: 0;
+  padding-left: clamp(36px, 4.5vw, 64px);
+}
+.hero--b .hero-intro p {
+  font-family: var(--ff-body);
+  font-size: clamp(32px, 4.2vw, 72px);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: -0.03em;
+  color: #14120f;
+  margin-bottom: clamp(48px, 7vw, 88px);
+}
+.hero--b .hero-line {
+  color: #14120f;
+  animation: none;
+}
+.hero--b .hero-intro strong {
+  font-weight: 400;
+  color: #14120f;
+}
+.hero--b .hero-clients-label {
+  width: min(100%, 1540px);
+  margin: 0 0 clamp(22px, 2.6vw, 36px);
+  padding-left: clamp(36px, 4.5vw, 64px);
+  text-align: left;
+  font-family: var(--ff-body);
+  font-size: clamp(13px, 1.1vw, 18px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #6b675f;
+}
+.hero--b .hero-clients {
+  width: min(100%, 1540px);
+  justify-content: flex-start;
+  gap: clamp(32px, 5vw, 88px);
+  margin: 0;
+  padding-left: clamp(36px, 4.5vw, 64px);
+}
+.hero--b .client-logo {
+  filter: grayscale(1) saturate(0) contrast(0.9) opacity(0.68);
+  mix-blend-mode: multiply;
+}
+.hero--b .client-logo-frame--ge .client-logo {
+  filter: grayscale(1) invert(1) contrast(0.75) opacity(0.68);
+}
+.hero--b .client-logo-frame:hover .client-logo {
+  filter: var(--logo-hover-filter);
+}
+.hero--b .client-logo-frame--ge:hover .client-logo {
+  filter: var(--ge-hover-filter);
+}
 .hero-clients-label {
   font-family: var(--ff-body);
   font-size: 11px;
@@ -1161,6 +1236,87 @@ footer {
 }
 .cs-arrow svg { width: 14px; height: 14px; }
 
+body:not(.page-works) #case-studies .cs-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+}
+body:not(.page-works) #case-studies .cs-card {
+  min-height: clamp(500px, 43vw, 620px);
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background: #fff6f4;
+  box-shadow: none;
+}
+body:not(.page-works) #case-studies .cs-card:hover {
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px rgba(28, 24, 20, 0.08);
+}
+body:not(.page-works) #case-studies .cs-img {
+  aspect-ratio: 340 / 212;
+  border-bottom: 0;
+  background: #fff;
+}
+body:not(.page-works) #case-studies .cs-img img {
+  object-fit: cover;
+}
+body:not(.page-works) #case-studies .cs-body {
+  padding: clamp(28px, 3.2vw, 36px) clamp(24px, 3vw, 34px) 30px;
+}
+body:not(.page-works) #case-studies .cs-num,
+body:not(.page-works) #case-studies .cs-desc,
+body:not(.page-works) #case-studies .cs-meta {
+  display: none;
+}
+body:not(.page-works) #case-studies .cs-title {
+  font-family: var(--ff-disp);
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.12;
+  color: #050505;
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+body:not(.page-works) #case-studies .cs-card:hover .cs-title {
+  color: #050505;
+}
+body:not(.page-works) #case-studies .cs-stats {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+body:not(.page-works) #case-studies .cs-stat {
+  padding: 0;
+  background: transparent;
+  color: #050505;
+  font-size: clamp(18px, 1.7vw, 26px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+body:not(.page-works) #case-studies .cs-arrow {
+  margin-top: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  color: #050505;
+  font-family: var(--ff-disp);
+  font-size: clamp(18px, 1.7vw, 24px);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+body:not(.page-works) #case-studies .cs-card:hover .cs-arrow,
+body:not(.page-works) #case-studies .cs-card:focus-visible .cs-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+body:not(.page-works) #case-studies .cs-arrow svg {
+  display: none;
+}
+
 /* ─── Divider ─── */
 .divider { height: 1px; background: var(--border); margin: 0 var(--pad); }
 
@@ -1170,6 +1326,12 @@ footer {
   .recommendation-grid { grid-template-columns: 1fr; }
   .projects-grid--featured {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  }
+  body:not(.page-works) #case-studies .cs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  }
+  body:not(.page-works) #case-studies .cs-card {
+    min-height: 560px;
   }
 }
 
@@ -1209,6 +1371,25 @@ footer {
   .hero { min-height: calc(100vh - 72px); }
   .hero-intro { width: min(100%, 700px); }
   .hero-intro p { font-size: clamp(20px, 5.5vw, 28px); }
+  .hero--b {
+    padding-top: 88px;
+    padding-bottom: 64px;
+  }
+  .hero--b::before {
+    top: 86px;
+    bottom: 44px;
+  }
+  .hero--b .hero-intro,
+  .hero--b .hero-clients-label,
+  .hero--b .hero-clients {
+    padding-left: clamp(28px, 6vw, 44px);
+  }
+  .hero--b .hero-intro p {
+    font-size: clamp(26px, 7vw, 44px);
+    line-height: 1.42;
+    letter-spacing: -0.04em;
+    margin-bottom: 48px;
+  }
   .hero-clients { flex-wrap: wrap; gap: 18px 22px; }
   .client-logo-frame { width: 94px; height: 40px; }
   .client-logo-frame--amazon { width: 94px; }
@@ -1229,6 +1410,15 @@ footer {
 
   /* Case Studies */
   .cs-body { padding: 24px 24px 28px; }
+  body:not(.page-works) #case-studies .cs-card {
+    min-height: 540px;
+  }
+  body:not(.page-works) #case-studies .cs-title {
+    font-size: clamp(38px, 11vw, 54px);
+  }
+  body:not(.page-works) #case-studies .cs-stat {
+    font-size: clamp(18px, 5vw, 24px);
+  }
 
   /* Projects */
   .projects-grid--featured { grid-template-columns: 1fr; }
@@ -1290,6 +1480,29 @@ footer {
 
 @media (max-width: 480px) {
   .hero-clients { gap: 16px 20px; }
+  .hero--b {
+    min-height: calc(100vh - 72px);
+    padding-inline: 28px;
+  }
+  .hero--b::before {
+    left: 28px;
+    width: 2px;
+  }
+  .hero--b .hero-intro,
+  .hero--b .hero-clients-label,
+  .hero--b .hero-clients {
+    padding-left: 24px;
+  }
+  .hero--b .hero-intro p {
+    font-size: clamp(24px, 9vw, 38px);
+    line-height: 1.35;
+  }
+  .hero--b .hero-line {
+    display: inline;
+  }
+  .hero--b .hero-clients {
+    gap: 16px 24px;
+  }
   .client-logo-frame { width: 84px; height: 36px; }
   .client-logo-frame--amazon { width: 88px; }
   .client-logo-frame--vodafone { width: 118px; }
@@ -1300,6 +1513,15 @@ footer {
   .client-logo--philips { width: 96px; }
   .client-logo-frame--ge .client-logo { width: 138px; }
   .client-logo--ubs { width: 72px; }
+  body:not(.page-works) #case-studies .cs-card {
+    min-height: 500px;
+  }
+  body:not(.page-works) #case-studies .cs-body {
+    padding: 26px 24px 28px;
+  }
+  body:not(.page-works) #case-studies .cs-title {
+    font-size: clamp(34px, 11vw, 46px);
+  }
   .about-photos { grid-template-columns: 1fr; grid-template-rows: 280px 180px 180px; }
   .about-photos .photo-cell:first-child { grid-row: auto; }
   .exp-tiles { grid-template-columns: 1fr; }
