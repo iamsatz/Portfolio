@@ -6,12 +6,6 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", "-p", "4000", "."],
       "port": 4000
-    },
-    {
-      "name": "sateesh",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-p", "4100", "sateesh-portfolio-claude"],
-      "port": 4100
     }
   ]
 }

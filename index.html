@@ -1,369 +1,247 @@
 <!DOCTYPE html>
-<html lang="en" data-version="grey-to-black-logos-v2">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portfolio-version" content="grey-to-black-logos-v2">
-<title>Sateesh Kumar L, Product Designer</title>
+<title>Sateesh, Digital Product Designer</title>
+<meta name="description" content="Sateesh, Digital Product Designer with 12+ yrs of experience in AI assisted building, interface design, design systems and hyperlocal market intelligence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,500,500i&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-<!-- ─── Nav ─── -->
-<nav>
-  <a class="nav-logo" href="#top">Sateesh Kumar L</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#case-studies">Case Studies</a></li>
-    <li><a href="works/index.html">Works</a></li>
-    <li><a href="#explorations">Explorations</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-actions">
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
-      <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="4.5"></circle>
-        <path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4L5.6 5.6"></path>
-      </svg>
-      <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20 14.3A8.3 8.3 0 0 1 9.7 4a8.8 8.8 0 1 0 10.3 10.3Z"></path>
-      </svg>
-    </button>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<!-- Sticky nav, appears on scroll (S2 state) -->
+<header class="nav">
+  <a class="brand" href="#top">Sateesh</a>
+  <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nav__menu" aria-label="Primary">
+    <a class="nav__link" href="#case-studies">Case Studies</a>
+    <a class="nav__link" href="#selected-projects">Works</a>
+    <a class="nav__link" href="#explorations">Explorations</a>
+    <a class="nav__link" href="mailto:hola@iamsatz.me">Say Hello</a>
+  </nav>
+</header>
 
-<!-- ─── Hero ─── -->
-<div class="hero hero--b" id="top">
-  <div class="circle-field" aria-hidden="true">
-    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-      <ellipse class="e1" cx="1400" cy="800" rx="1800" ry="1200"></ellipse>
-      <ellipse class="e2" cx="1200" cy="750" rx="900" ry="550" transform="rotate(-15 1200 750)"></ellipse>
-      <ellipse class="e3" cx="1280" cy="780" rx="600" ry="400" transform="rotate(20 1280 780)"></ellipse>
-      <ellipse class="e4" cx="1300" cy="770" rx="400" ry="260"></ellipse>
-      <ellipse class="e5" cx="200" cy="200" rx="380" ry="240" transform="rotate(25 200 200)"></ellipse>
-      <ellipse class="e6" cx="1330" cy="790" rx="200" ry="130"></ellipse>
-      <ellipse class="e7" cx="1340" cy="785" rx="120" ry="80"></ellipse>
-      <ellipse class="e8" cx="800" cy="450" rx="500" ry="320" transform="rotate(-10 800 450)"></ellipse>
-    </svg>
-  </div>
-  <div class="hero-intro">
-    <p>
-      <span class="hero-line"><strong>I'm Sateesh</strong>, a <strong>Digital Product Designer</strong> with <strong>12+&nbsp;yrs</strong></span>
-      <span class="hero-line">of experience, specialising in <strong>AI-Assisted Building</strong>,</span>
-      <span class="hero-line"><strong>Interface Design</strong>, <strong>Design Systems</strong> and <strong>Hyperlocal</strong></span>
-      <span class="hero-line"><strong>Market Intelligence</strong>.</span>
-    </p>
-  </div>
-  <p class="hero-clients-label">Clients I worked with</p>
-  <div class="hero-clients" aria-label="Selected client logos">
-    <span class="client-logo-frame client-logo-frame--amazon">
-      <img class="client-logo client-logo--amazon" src="assets/logos/amazon.webp" alt="Amazon logo" loading="lazy">
-    </span>
-    <span class="client-logo-frame client-logo-frame--vodafone">
-      <img class="client-logo client-logo--vodafone" src="assets/logos/vodafone-2017-logo.svg" alt="Vodafone logo" loading="lazy">
-    </span>
-    <span class="client-logo-frame client-logo-frame--philips">
-      <img class="client-logo client-logo--philips" src="assets/logos/philips-mark-transparent.png" alt="Philips logo" loading="lazy">
-    </span>
-    <span class="client-logo-frame client-logo-frame--ge">
-      <img class="client-logo client-logo--ge" src="assets/logos/ge-aerospace.svg" alt="GE Aerospace logo" loading="lazy">
-    </span>
-    <span class="client-logo-frame client-logo-frame--ubs">
-      <img class="client-logo client-logo--ubs" src="assets/logos/ubs.svg" alt="UBS logo" loading="lazy">
-    </span>
-    <span class="client-logo-frame client-logo-frame--isha">
-      <img class="client-logo client-logo--isha" src="assets/logos/isha.png" alt="Isha Foundation logo" loading="lazy">
-    </span>
-  </div>
-</div>
+<!-- ─────────── S1 · Hero ─────────── -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero__grid">
+      <figure class="hero__photo">
+        <img src="assets/img/profile.png" alt="Portrait of Sateesh" width="280">
+      </figure>
+      <div class="hero__intro">
+        <a class="brand hero__logo" href="#top">Sateesh</a>
+        <p class="hero__text">I'm a Digital Product Designer with 12+ yrs of experience, specialising in AI Assisted Building, Interface Design, Design Systems and Hyperlocal Market Intelligence.</p>
+        <p class="clients__label">Clients I worked with</p>
+        <ul class="clients__list">
+          <li class="clients__item"><img class="clients__logo clients__logo--amazon" src="assets/logos/amazon.webp" alt="Amazon" loading="lazy"></li>
+          <li class="clients__item"><img class="clients__logo clients__logo--vodafone" src="assets/logos/vodafone-2017-logo.svg" alt="Vodafone" loading="lazy"></li>
+          <li class="clients__item"><img class="clients__logo clients__logo--philips" src="assets/logos/philips-mark-transparent.png" alt="Philips" loading="lazy"></li>
+          <li class="clients__item"><img class="clients__logo clients__logo--ge" src="assets/logos/ge-aerospace.svg" alt="GE Aerospace" loading="lazy"></li>
+          <li class="clients__item"><img class="clients__logo clients__logo--ubs" src="assets/logos/ubs.svg" alt="UBS" loading="lazy"></li>
+          <li class="clients__item"><img class="clients__logo clients__logo--isha" src="assets/logos/isha.png" alt="Isha Foundation" loading="lazy"></li>
+        </ul>
 
-<!-- ─── Case Studies ─── -->
-<section id="case-studies">
-  <div class="section-header">
-    <div class="section-header-text">
-      <div class="section-label">Case Studies</div>
-      <h2 class="section-title">Deep Dives</h2>
-      <p class="section-sub">A closer look at projects where the work needed more than polished screens. These stories cover the problem, trade-offs, decisions, and product thinking behind the final interface.</p>
-    </div>
-  </div>
-
-  <div class="cs-grid">
-
-    <a class="cs-card" href="case-studies/aampe/index.html">
-      <div class="cs-img">
-        <img src="assets/case-studies/aampe/card-preview.png" alt="Aampe case study preview" loading="lazy">
+        <!-- Dark pill nav (left-aligned in the right column) -->
+        <nav class="pill" aria-label="Sections">
+          <a class="pill__link" href="#case-studies">Case Studies</a>
+          <a class="pill__link" href="#selected-projects">Works</a>
+          <a class="pill__link" href="#explorations">Explorations</a>
+          <a class="pill__link" href="mailto:hola@iamsatz.me">Say Hello</a>
+        </nav>
       </div>
-      <div class="cs-body">
-        <div class="cs-num">01 — Aampe</div>
-        <div class="cs-title">UI Design Library for Aampe</div>
-        <p class="cs-desc">UI Design Library for Aampe — an Agentic Personalisation Platform. Built in phases to support a live product rebrand without disrupting existing users.</p>
-        <div class="cs-stats">
-          <span class="cs-stat">50+ components</span>
-          <span class="cs-stat">60+ Figma variables</span>
-          <span class="cs-stat">Light/dark modes</span>
-        </div>
-        <div class="cs-meta">
-          <span>Design System Designer</span>
-          <span>HueGrid</span>
-          <span>2025–present</span>
-        </div>
-        <span class="cs-arrow">View Case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </div>
-    </a>
-
-    <a class="cs-card" href="case-studies/rhythm-healthcare/index.html">
-      <div class="cs-img">
-        <img src="assets/case-studies/rhythm-healthcare/card-preview.png" alt="Rhythm Healthcare case study preview" loading="lazy">
-      </div>
-      <div class="cs-body">
-        <div class="cs-num">02 — Rhythm Healthcare</div>
-        <div class="cs-title">Rhythm Healthcare Platform</div>
-        <p class="cs-desc">Redesigning a clinician's daily workflow on a platform processing 1.2M+ transmissions a year — and hearing "you made my work easier."</p>
-        <div class="cs-stats">
-          <span class="cs-stat">1.2M+ transmissions/yr</span>
-          <span class="cs-stat">100K+ patients</span>
-          <span class="cs-stat">Clinician-validated</span>
-        </div>
-        <div class="cs-meta">
-          <span>Sole Designer</span>
-          <span>2023–24</span>
-        </div>
-        <span class="cs-arrow">View Case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </div>
-    </a>
-
-    <a class="cs-card" href="case-studies/first-responder/index.html">
-      <div class="cs-img">
-        <img src="assets/case-studies/first-responder/card-preview.png" alt="First Responder case study preview" loading="lazy">
-      </div>
-      <div class="cs-body">
-        <div class="cs-num">03 — First Responder</div>
-        <div class="cs-title">First Responder Airspace</div>
-        <p class="cs-desc">AiRXOS (part of GE Aviation) — airspace management used by 200+ US public safety agencies. Web, iPad, and iPhone, as the sole designer.</p>
-        <div class="cs-stats">
-          <span class="cs-stat">4 surfaces</span>
-          <span class="cs-stat">200+ agencies</span>
-          <span class="cs-stat">~70% time saved</span>
-        </div>
-        <div class="cs-meta">
-          <span>Product Designer</span>
-          <span>GE Aviation</span>
-          <span>2017–19</span>
-        </div>
-        <span class="cs-arrow">View Case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ─── Projects ─── -->
-<section id="works">
-  <div class="section-header">
-    <div class="section-header-text">
-      <div class="section-label">Selected Work</div>
-      <h2 class="section-title">Projects</h2>
-      <p class="section-sub">A tighter look at three representative projects. The full archive lives on the Works page.</p>
-    </div>
-  </div>
-
-  <div class="projects-grid projects-grid--featured">
-    <div class="project-card">
-      <div class="proj-media">
-        <img src="assets/projects/amazon-enterprise-design-language.png" alt="Amazon enterprise design language project preview placeholder" loading="lazy">
-      </div>
-      <div class="proj-content">
-        <div class="proj-company">Amazon</div>
-        <div class="proj-title">Enterprise Design Language</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Design Systems</span>
-          <span class="proj-tag">Tokens</span>
-          <span class="proj-tag">Enterprise</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-media">
-        <img src="assets/projects/vodafone-mobile-experience.png" alt="Vodafone consumer mobile experience project preview placeholder" loading="lazy">
-      </div>
-      <div class="proj-content">
-        <div class="proj-company">Vodafone</div>
-        <div class="proj-title">Consumer Mobile Experience</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Mobile UX</span>
-          <span class="proj-tag">Consumer</span>
-          <span class="proj-tag">Multi-market</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-media">
-        <img src="assets/projects/philips-clinical-interface.png" alt="Philips clinical interface design project preview placeholder" loading="lazy">
-      </div>
-      <div class="proj-content">
-        <div class="proj-company">Philips</div>
-        <div class="proj-title">Clinical Interface Design</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Healthcare</span>
-          <span class="proj-tag">Data Viz</span>
-          <span class="proj-tag">Safety-Critical</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="works-more">
-    <a class="works-more-link" href="works/index.html">
-      <span>Show more work</span>
-      <span class="works-more-meta">20 projects</span>
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- ─── Recommendations ─── -->
-<div class="divider"></div>
-<section id="recommendations">
-  <div class="section-header">
-    <div class="section-header-text">
-      <div class="section-label">Recommendations</div>
-      <h2 class="section-title">From the People Who Hired Me</h2>
-      <p class="section-sub">A few notes from people I worked with, hired by, or partnered with across product teams.</p>
-    </div>
-  </div>
-  <div class="recommendation-grid">
-    <article class="recommendation-card">
-      <p class="recommendation-quote">Sateesh brings clarity to complex product problems and moves with a rare mix of craft, speed, and collaboration.</p>
-      <div class="recommendation-person">
-        <span>LinkedIn Recommendation</span>
-        <span>Hiring Manager</span>
-      </div>
-    </article>
-    <article class="recommendation-card">
-      <p class="recommendation-quote">He is thoughtful with systems, precise with interface details, and generous in the way he works with cross-functional teams.</p>
-      <div class="recommendation-person">
-        <span>LinkedIn Recommendation</span>
-        <span>Product Partner</span>
-      </div>
-    </article>
-    <article class="recommendation-card">
-      <p class="recommendation-quote">A dependable designer who can take ambiguity, shape it into a direction, and help the team make confident progress.</p>
-      <div class="recommendation-person">
-        <span>LinkedIn Recommendation</span>
-        <span>Design Leader</span>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ─── Explorations ─── -->
-<div class="divider"></div>
-<section id="explorations">
-  <div class="section-header">
-    <div class="section-header-text">
-      <div class="section-label">Explorations</div>
-      <h2 class="section-title">Side Experiments</h2>
-      <p class="section-sub">Click an experiment to see the concept page, current thinking, and contact options.</p>
-    </div>
-  </div>
-  <div class="exp-tiles">
-    <a class="exp-tile" href="explorations/chrome-extension/index.html">
-      <div class="exp-tile-label">Chrome Extension</div>
-      <div class="exp-tile-title">Browser Workflow Tool</div>
-      <p class="exp-tile-body">A small utility experiment designed around reducing repeated browser actions and keeping everyday workflows lighter.</p>
-      <div class="exp-tile-coming">View experiment</div>
-    </a>
-    <a class="exp-tile" href="explorations/convenience-store-india/index.html">
-      <div class="exp-tile-label">Retail Concept</div>
-      <div class="exp-tile-title">Convenience Store for India</div>
-      <p class="exp-tile-body">A complete product and service concept for a modern Indian convenience store experience, shaped around local buying behavior.</p>
-      <div class="exp-tile-coming">View experiment</div>
-    </a>
-    <a class="exp-tile" href="explorations/ai-tuition-students/index.html">
-      <div class="exp-tile-label">AI Learning</div>
-      <div class="exp-tile-title">AI Tuition for Students</div>
-      <p class="exp-tile-body">A learning concept exploring how AI can help students practice, ask better questions, and understand topics at their own pace.</p>
-      <div class="exp-tile-coming">View experiment</div>
-    </a>
-  </div>
-</section>
-<!-- ─── Contact ─── -->
-<div class="divider"></div>
-<section id="contact">
-  <div class="contact-inner">
-    <div class="section-label">Contact</div>
-    <h2 class="section-title">Let's talk.</h2>
-    <p class="contact-sub">Open to product design roles, design system work, and interesting problems. Drop me a line — I read everything.</p>
-    <a class="contact-email" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
-    <div class="contact-links">
-      <a href="#">LinkedIn</a>
-      <a href="#">Dribbble</a>
-      <a href="#">HueGrid</a>
     </div>
   </div>
 </section>
 
-<!-- ─── Footer ─── -->
-<footer>
-  <div class="footer-name">Sateesh Kumar L</div>
-  <div class="footer-copy">© 2025 · AI-native Digital Product Designer</div>
-  <div class="footer-links">
-    <a href="#">LinkedIn</a>
-    <a href="#">Dribbble</a>
-    <a href="#">HueGrid</a>
-    <a href="mailto:hola@iamsatz.me">Email</a>
+<main>
+  <!-- ─────────── S2 · Case Studies ─────────── -->
+  <section class="section" id="case-studies">
+    <div class="wrap">
+      <h2 class="section__title">Case Studies</h2>
+      <p class="section__lead">A closer look at projects where the work needed more than polished screens. These stories cover the problem, trade-offs, decisions, and product thinking behind the final interface.</p>
+
+      <div class="grid">
+        <a class="card" href="case-studies/aampe/index.html">
+          <span class="card__media"><img src="assets/work/aampe.png" alt="UI Design Library for Aampe" loading="lazy"></span>
+          <h3 class="card__title">UI Design Library for Aampe</h3>
+          <p class="card__desc">Aampe's AI personalization platform serves growth teams at companies like Swiggy and Glide. Over 13 months, I built a complete design system from the ground up.</p>
+          <span class="card__tag card__tag--coral">AI</span>
+        </a>
+
+        <a class="card" href="case-studies/rhythm-healthcare/index.html">
+          <span class="card__media"><img src="assets/work/rhythm.png" alt="Rhythm Healthcare Platform" loading="lazy"></span>
+          <h3 class="card__title">Rhythm Healthcare Platform</h3>
+          <p class="card__desc">Redesigning a clinician's daily workflow on a remote patient monitoring platform processing 1.2M+ transmissions a year, and hearing "you made my work easier."</p>
+          <span class="card__tag card__tag--sky">Health Care</span>
+        </a>
+
+        <a class="card" href="case-studies/first-responder/index.html">
+          <span class="card__media"><img src="assets/work/first-responder.png" alt="First Responder Airspace" loading="lazy"></span>
+          <h3 class="card__title">First Responder Airspace</h3>
+          <p class="card__desc">AiRXOS (part of GE Aviation) builds the airspace management platform used by 200+ US public safety agencies. I designed across web, iPad, and iPhone as the sole designer.</p>
+          <span class="card__tag card__tag--lime">Aviation</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── S2 · Selected Projects ─────────── -->
+  <section class="section" id="selected-projects">
+    <div class="wrap">
+      <div class="section__head">
+        <h2 class="section__title">Selected Projects</h2>
+        <a class="section__more" href="works/index.html">View More</a>
+      </div>
+      <p class="section__lead">A tighter look at six representative projects. The full archive lives on the Works page.</p>
+
+      <div class="grid">
+        <a class="project" href="works/aampe-figma-plugin/index.html">
+          <span class="project__media"><img src="assets/projects/aampe-figma-plugin.png" alt="Aampe Figma Plugin" loading="lazy"></span>
+          <h3 class="project__title">Aampe Figma Plugin</h3>
+        </a>
+        <a class="project" href="works/ubs-compliance-portal/index.html">
+          <span class="project__media"><img src="assets/projects/ubs-compliance-portal.png" alt="UBS Compliance Portal" loading="lazy"></span>
+          <h3 class="project__title">UBS Compliance Portal</h3>
+        </a>
+        <a class="project" href="works/brp-insurance/index.html">
+          <span class="project__media"><img src="assets/projects/brp-insurance.png" alt="BRP Insurance" loading="lazy"></span>
+          <h3 class="project__title">BRP Insurance</h3>
+        </a>
+        <a class="project" href="works/huddl-ai/index.html">
+          <span class="project__media"><img src="assets/projects/huddl-meeting-platform.png" alt="Huddl.ai" loading="lazy"></span>
+          <h3 class="project__title">Huddl.ai</h3>
+        </a>
+        <a class="project" href="works/farmrevv/index.html">
+          <span class="project__media"><img src="assets/projects/farmrevv-warehouse-app.png" alt="Farmrevv" loading="lazy"></span>
+          <h3 class="project__title">Farmrevv</h3>
+        </a>
+        <a class="project" href="works/clear-voice/index.html">
+          <span class="project__media"><img src="assets/projects/clearvoice-noise-cancellation.png" alt="Clear Voice" loading="lazy"></span>
+          <h3 class="project__title">Clear Voice</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── Explorations ─────────── -->
+  <section class="section" id="explorations">
+    <div class="wrap">
+      <h2 class="section__title">Explorations</h2>
+      <p class="section__lead">Side experiments, small concepts I build to think through ideas. Open any to see the concept and current thinking.</p>
+
+      <div class="grid">
+        <a class="card card--exp" href="explorations/freestyle/index.html">
+          <h3 class="card__title">FreeStyle</h3>
+          <p class="card__desc">A design-system auditor for the browser, scan, inspect, replace, and audit colors, typography, and accessibility on any webpage.</p>
+          <span class="card__tag">Developer Tools</span>
+        </a>
+
+        <a class="card card--exp" href="explorations/chrome-extension/index.html">
+          <h3 class="card__title">Browser Workflow Tool</h3>
+          <p class="card__desc">A small utility experiment designed around reducing repeated browser actions and keeping everyday workflows lighter.</p>
+          <span class="card__tag">Productivity</span>
+        </a>
+
+        <a class="card card--exp" href="explorations/bhor-weather/index.html">
+          <h3 class="card__title">Bhor: Weather, Decoded</h3>
+          <p class="card__desc">A menu-bar weather app that tells you what to do with the day, not just the numbers. Live weather, decoded into plain-language actions.</p>
+          <span class="card__tag">Consumer App</span>
+        </a>
+
+        <a class="card card--exp" href="explorations/convenience-store-india/index.html">
+          <h3 class="card__title">Convenience Store for India</h3>
+          <p class="card__desc">A complete product and service concept for a modern Indian convenience store experience, shaped around local buying behavior.</p>
+          <span class="card__tag">Hyperlocal Commerce</span>
+        </a>
+
+        <a class="card card--exp" href="explorations/ai-tuition-students/index.html">
+          <h3 class="card__title">AI Tuition for Students</h3>
+          <p class="card__desc">A learning concept exploring how AI can help students practice, ask better questions, and understand topics at their own pace.</p>
+          <span class="card__tag">EdTech</span>
+        </a>
+
+        <a class="card card--exp" href="explorations/hueprint/index.html">
+          <h3 class="card__title">HuePrint</h3>
+          <p class="card__desc">Design token kits for AI-builders, pick a brand kit, paste it into your AI tool, and get branded UI instantly.</p>
+          <span class="card__tag">Design Tools</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner wrap">
+    <div class="footer__cta">
+      <p class="footer__eyebrow">Have a project in mind?</p>
+      <a class="footer__email" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
+      <p class="footer__avail">Product design &amp; design-systems work, selectively taking on new collaborations through 2026.</p>
+    </div>
+    <div class="footer__cols">
+      <nav class="footer__col" aria-label="Sitemap">
+        <span class="footer__head">Sitemap</span>
+        <a href="#top">Home</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#selected-projects">Works</a>
+        <a href="#explorations">Explorations</a>
+      </nav>
+      <nav class="footer__col" aria-label="Elsewhere">
+        <span class="footer__head">Elsewhere</span>
+        <a href="https://www.linkedin.com/in/iamsatz/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/iamsatz" target="_blank" rel="noopener">X</a>
+        <a href="https://huegrid.com/" target="_blank" rel="noopener">HueGrid</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer__bar wrap">
+    <span class="brand footer__brand">Sateesh</span>
+    <span class="footer__copy">© 2026 Sateesh Kumar L · Bengaluru, India</span>
+    <a class="footer__top" href="#top">Back to top ↑</a>
   </div>
 </footer>
 
 <script>
-  const root = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+  // Sticky nav reveals only after the hero (S1) is scrolled past
+  const heroEl = document.querySelector('.hero');
+  let revealAt = () => (heroEl ? heroEl.offsetHeight - 80 : 600);
+  const onScroll = () => document.body.classList.toggle('is-scrolled', window.scrollY > revealAt());
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
 
-  const savedTheme = localStorage.getItem('portfolio-theme-grey-to-black-logos-v2');
-  let activeTheme = savedTheme || 'light';
-
-  function setTheme(theme) {
-    activeTheme = theme;
-    root.setAttribute('data-theme', theme);
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    const actionLabel = nextTheme === 'dark' ? 'Switch to dark mode' : 'Switch to light mode';
-    themeToggle.setAttribute('aria-label', actionLabel);
-    themeToggle.setAttribute('title', actionLabel);
+  // Mobile menu toggle
+  const navEl = document.querySelector('.nav');
+  const burger = document.getElementById('navBurger');
+  if (burger && navEl) {
+    burger.addEventListener('click', () => {
+      const open = navEl.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open);
+    });
+    navEl.querySelectorAll('.nav__link').forEach(a => a.addEventListener('click', () => {
+      navEl.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+    }));
   }
 
-  setTheme(activeTheme);
-
-  themeToggle.addEventListener('click', () => {
-    const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('portfolio-theme-grey-to-black-logos-v2', nextTheme);
-    setTheme(nextTheme);
-  });
-
-  navToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    navToggle.classList.toggle('open', open);
-    navToggle.setAttribute('aria-expanded', open);
-  });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
+  // Smooth in-page scrolling (offset handled by scroll-padding-top)
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) { e.preventDefault(); return; }   // bare "#": inert, no jump
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', id);
     });
   });
+
+  // (Case-study cards use a simple, subtle hover lift in CSS — no JS tilt.)
 </script>
 </body>
 </html>

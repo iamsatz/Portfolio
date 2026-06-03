@@ -14,24 +14,15 @@
 </head>
 <body class="page-works page-project-detail">
 <nav>
-  <a class="nav-logo" href="../../index.html#top">Sateesh Kumar L</a>
+  <a class="nav-logo" href="../../index.html#top">Sateesh</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="../../index.html#case-studies">Case Studies</a></li>
     <li><a href="../../works/index.html" aria-current="page">Works</a></li>
     <li><a href="../../index.html#explorations">Explorations</a></li>
-    <li><a href="../../about.html">About</a></li>
-    <li><a href="../../index.html#contact">Contact</a></li>
+    
+    <li><a href="mailto:hola@iamsatz.me">Say Hello</a></li>
   </ul>
   <div class="nav-actions">
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
-      <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="4.5"></circle>
-        <path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4L5.6 5.6"></path>
-      </svg>
-      <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20 14.3A8.3 8.3 0 0 1 9.7 4a8.8 8.8 0 1 0 10.3 10.3Z"></path>
-      </svg>
-    </button>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -101,37 +92,17 @@
 </main>
 
 <footer>
-  <div>Sateesh Kumar L</div>
+  <div>Sateesh</div>
   <div class="footer-links">
     <a href="../../index.html#top">Home</a>
     <a href="../index.html">Works</a>
-    <a href="../../index.html#contact">Contact</a>
+    <a href="mailto:hola@iamsatz.me">Say Hello</a>
   </div>
 </footer>
 
 <script>
-  const root = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
-  const savedTheme = localStorage.getItem('portfolio-theme');
-  if (savedTheme === 'dark') root.setAttribute('data-theme', 'dark');
-  function updateThemeLabel() {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-  }
-  updateThemeLabel();
-  themeToggle.addEventListener('click', () => {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      root.removeAttribute('data-theme');
-      localStorage.setItem('portfolio-theme', 'light');
-    } else {
-      root.setAttribute('data-theme', 'dark');
-      localStorage.setItem('portfolio-theme', 'dark');
-    }
-    updateThemeLabel();
-  });
   navToggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     navToggle.classList.toggle('open', open);
