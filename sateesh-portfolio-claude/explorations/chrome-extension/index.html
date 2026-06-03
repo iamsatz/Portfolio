@@ -7,9 +7,7 @@
 <title>Browser Workflow Tool, Sateesh Kumar L</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,500,500i&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/styles/site.css">
 </head>
 <body>
@@ -19,7 +17,6 @@
     <li><a href="../../index.html#case-studies">Case Studies</a></li>
     <li><a href="../../works/index.html">Works</a></li>
     <li><a href="../../index.html#explorations" aria-current="page">Explorations</a></li>
-    
     <li><a href="mailto:hola@iamsatz.me">Say Hello</a></li>
   </ul>
   <div class="nav-actions">
@@ -29,22 +26,77 @@
 
 <main>
   <section class="page-hero">
-    <div class="section-label">Side Experiment</div>
+    <a class="back-link" href="../../index.html#explorations">← All explorations</a>
+    <div class="section-label">Chrome Extension · Concept</div>
     <h1 class="page-title">Browser Workflow Tool</h1>
-    <p class="section-sub">A Chrome extension experiment for reducing repeated browser actions and helping everyday workflows feel lighter.</p>
+    <p class="section-sub">A small utility experiment designed around reducing repeated browser actions and keeping everyday workflows lighter.</p>
   </section>
 
   <div class="divider"></div>
 
   <section class="detail-section">
-    <div class="detail-kicker">Concept Notes</div>
+    <div class="detail-kicker">The Concept</div>
     <div class="detail-copy">
-      <p>This started as a small utility idea: when people repeat the same browser steps every day, the product should remember the pattern and make the next action easier.</p>
-      <p>The exploration focuses on low-friction capture, fast recall, and a calm interface that stays out of the way until it is needed.</p>
+      <p>Most research and reference work happens in the browser, and the browser is bad at remembering it. You open twenty tabs chasing an idea, follow one promising link into another, and three days later you can't reconstruct <strong>how</strong> you got anywhere or <strong>why</strong> a page mattered.</p>
+      <p>This exploration started from a simple frustration: your browser history is a list, but research is a tree. History flattens everything into a time-sorted log and throws away the one thing that actually carried meaning, the path between pages.</p>
+      <p>So I built a tool that captures the <strong>shape</strong> of a browsing session, not just the URLs. You start a session, browse normally, and it quietly builds a visual map: every page becomes a node, opening a link from it becomes a child, going back and branching becomes a new branch. Each node keeps a thumbnail, the page's dominant colors, and its fonts, the things a designer actually remembers a page by.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">The Problem It Pokes At</div>
+    <div class="detail-copy">
+      <p>The gap nobody fills: capturing the branching path of research with visual context, without asking the user to do extra work.</p>
       <div class="detail-list">
-        <div class="detail-list-item"><span>Problem</span><span>Browser workflows are often fragmented across tabs, tools, saved links, and repeated manual actions.</span></div>
-        <div class="detail-list-item"><span>Direction</span><span>A lightweight extension that helps users save, recall, and reuse common browser tasks.</span></div>
-        <div class="detail-list-item"><span>Status</span><span>Side project in progress. Screens and build notes can be shared on request.</span></div>
+        <div class="detail-list-item"><span>No record</span><span>A reference-heavy session means 40+ tabs and zero durable record of how it all connected.</span></div>
+        <div class="detail-list-item"><span>Bookmarks</span><span>They save URLs but lose hierarchy and context, the structure that gave the links meaning.</span></div>
+        <div class="detail-list-item"><span>Notes apps</span><span>They require you to stop and transcribe. Friction kills the flow, so the record never gets made.</span></div>
+        <div class="detail-list-item"><span>Tab crashes</span><span>One crash wipes an entire session, hours of branching gone in an instant.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Current Thinking</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Capture must be invisible</span><span>The moment saving requires a modal or a folder choice, people stop doing it mid-flow. The only decision should be "record / don't record", everything else is passive.</span></div>
+        <div class="detail-list-item"><span>Designers think in pictures</span><span>A thumbnail and a color swatch row beat a page title for recall. You remember "the dark pricing page with the orange button," never the URL.</span></div>
+        <div class="detail-list-item"><span>Control beats automation</span><span>An early version auto-started itself on certain sites. It felt invasive, visiting a page shouldn't hijack your browser. The user decides when work begins.</span></div>
+        <div class="detail-list-item"><span>Local-first posture</span><span>Everything stays on the device. No account, no server, no telemetry. For a tool that watches your browsing, privacy isn't a feature, it's the price of trust.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">What It Can Do Today</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Visual tree</span><span>Turns a session into a visual tree, or a sitemap view grouped by site.</span></div>
+        <div class="detail-list-item"><span>Auto-capture</span><span>Grabs a screenshot, color palette, and fonts for every page, automatically.</span></div>
+        <div class="detail-list-item"><span>Inspect</span><span>Select a single element to save just that section instead of the whole page.</span></div>
+        <div class="detail-list-item"><span>Replay</span><span>Play a session back like a slideshow to retrace the path.</span></div>
+        <div class="detail-list-item"><span>Export</span><span>Export as Markdown, as an AI-ready prompt, or get an in-tool AI summary with your own key.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Open Questions</div>
+    <div class="detail-copy">
+      <p>How much structure is <strong>too</strong> much before capture starts feeling like filing?</p>
+      <p>Should the map be the output, or just the raw material for a cleaner artifact, a deck, a moodboard, a brief?</p>
+      <p>Where's the line between "research tool" and "second brain"?</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Status</span><span>Working concept, used daily. Still figuring out where it wants to live.</span></div>
       </div>
     </div>
   </section>

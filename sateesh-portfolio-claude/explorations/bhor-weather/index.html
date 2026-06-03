@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-version="exploration-detail-v1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portfolio-version" content="exploration-detail-v1">
+<title>Bhor: Weather, Decoded, Sateesh Kumar L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles/site.css">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../../index.html#top">Sateesh</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html#case-studies">Case Studies</a></li>
+    <li><a href="../../works/index.html">Works</a></li>
+    <li><a href="../../index.html#explorations" aria-current="page">Explorations</a></li>
+    <li><a href="mailto:hola@iamsatz.me">Say Hello</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <a class="back-link" href="../../index.html#explorations">← All explorations</a>
+    <div class="section-label">macOS App · Working Prototype</div>
+    <h1 class="page-title">Bhor: Weather, Decoded</h1>
+    <p class="section-sub">A menu-bar weather app that tells you what to do, not just the numbers. Your daily dawn, decoded.</p>
+  </section>
+
+  <section class="project-detail-media">
+    <img src="../../assets/explorations/bhor-weather/bhor-cover.png" alt="Bhor: Weather, Decoded. Wordmark and tagline cover.">
+    <span class="project-img-caption">Bhor, your daily dawn, decoded</span>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">The Concept</div>
+    <div class="detail-copy">
+      <p>Most weather apps hand you numbers and walk away. UV index 8. Humidity 80%. AQI 98. Fine, but what am I supposed to <strong>do</strong> with that?</p>
+      <p>Apple Weather says it's 38°. Bhor says: take an umbrella for shade, drink 3L of water, step out 9–11 AM for Vitamin D, avoid the outdoors 12–5, and watch for mosquitoes after 6 PM. Same data, different output. The difference is <strong>interpretation</strong>.</p>
+      <p>Bhor's whole idea is to never show a number without telling you what it means for your day. It reads live weather and air quality and turns it into a short list of plain-language "do this" cards, placed on a timeline of your day.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Principle</span><span>A number is a question. An action is an answer. Bhor only ships answers.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-detail-media">
+    <img src="../../assets/explorations/bhor-weather/bhor-concept.png" alt="Same weather data shown as raw numbers versus Bhor's plain-language actions.">
+    <span class="project-img-caption">Same data, a different answer</span>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">What It Does</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Lives in the menu bar</span><span>Glanceable, no Dock icon, no app to "open."</span></div>
+        <div class="detail-list-item"><span>Today ribbon</span><span>A colored bar of your day (green good · yellow caution · red stay in) with a "now" line; hover any hour to see what's happening.</span></div>
+        <div class="detail-list-item"><span>Insight cards</span><span>Time-led ("9:00–11:00 AM · Vitamin D"), sorted by when they matter, with past ones dimmed.</span></div>
+        <div class="detail-list-item"><span>17 rule-based insights</span><span>Best time outside, sun protection, hydration, mosquito hour, open/close windows, golden hour, and more.</span></div>
+        <div class="detail-list-item"><span>Search any city</span><span>Nearby-first results when you look somewhere new.</span></div>
+        <div class="detail-list-item"><span>Private by design</span><span>No account, no ads, no analytics; everything stays on-device.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-detail-media">
+    <img src="../../assets/explorations/bhor-weather/bhor-popover.png" alt="The Bhor menu-bar popover showing the day ribbon and time-led insight cards.">
+    <span class="project-img-caption">The Bhor popover, the day's actions at a glance</span>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">How It Works</div>
+    <div class="detail-copy">
+      <p>The "brain" is a small rule engine. Each insight is a documented rule with a real threshold, e.g. Vitamin D fires when UV is in the safe synthesis band (3–8) and it isn't an "avoid outdoors" hour. The honesty matters: the rules are based on public-health and meteorological guidance, not vibes.</p>
+      <p>Data comes from free, no-key APIs (Open-Meteo for weather and air quality), so the app stays free forever and sends nothing personal anywhere.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>The pipeline</span><span>Live weather → 17 rules → plain-language actions → your day, decoded.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-detail-media">
+    <img src="../../assets/explorations/bhor-weather/bhor-ribbon.png" alt="The colour-coded day ribbon explained, green to red across the hours.">
+    <span class="project-img-caption">The day, colour-coded, green good, yellow caution, red stay in</span>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Current Thinking</div>
+    <div class="detail-copy">
+      <p><strong>What's working.</strong> The interpretation layer is the whole point, and it lands, reading "step out before the heat" beats reading "UV 8" every time. A single menu-bar glance fits the habit better than opening an app.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Trust through consistency</span><span>Early on the engine once said "avoid outdoors 12–7" and "sunbathe 3–5" on the same day. Contradictions quietly destroy trust, so the rules now reconcile against each other.</span></div>
+        <div class="detail-list-item"><span>Personalization without clutter</span><span>Next idea: pick your profession and a work location, and the same insights re-prioritize, an outdoor worker hears heat/UV loudest; a desk worker hears walk windows, but the default stays simple for everyone.</span></div>
+        <div class="detail-list-item"><span>The honest limit</span><span>Accurate auto-location and friction-free sharing both need Apple Developer signing. Until then, search is the reliable path, a reminder that "free + private" has real edges.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Stack &amp; Status</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Built with</span><span>Swift 6 + SwiftUI, macOS 14+ (@Observable, UserDefaults, no backend). Menu-bar-only (LSUIElement), built from a written spec before any code.</span></div>
+        <div class="detail-list-item"><span>Data</span><span>Open-Meteo (weather + air quality), Apple MapKit (city search), OpenStreetMap (place names), all free, no keys.</span></div>
+        <div class="detail-list-item"><span>Status</span><span>A working prototype on macOS, shareable as a DMG and currently being tested with friends. iOS + Android are the natural next platforms; the rule engine ports cleanly.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact" class="detail-contact">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Want to try it?</h2>
+      <p class="contact-sub">There's a working macOS build (DMG) I'm sharing for feedback. I can walk through the idea, the rule engine, and what I learned building it.</p>
+      <a class="contact-email" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-name">Sateesh</div>
+  <div class="footer-links">
+    <a href="../../index.html#explorations">All explorations</a>
+    <a href="mailto:hola@iamsatz.me">Email</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>

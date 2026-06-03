@@ -109,6 +109,7 @@ ul { list-style: none; }
 .nav__menu { display: flex; gap: clamp(1.25rem, 2.4vw, 2.5rem); }
 .nav__link { font-size: 0.95rem; color: var(--color-ink); transition: color 0.2s ease; }
 .nav__link:hover { color: var(--color-faint); }
+.nav__burger { display: none; }
 
 /* ---------- S1 hero ---------- */
 .hero {
@@ -238,40 +239,20 @@ ul { list-style: none; }
 }
 .card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(33, 28, 23, 0.10); }
 
-/* Subtle cursor-tracked 3D tilt + soft glare — case-study cards only */
-#case-studies .grid { perspective: 1100px; }
-#case-studies .card {
-  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-  transform-style: preserve-3d;
-  transition: transform 0.4s var(--ease), box-shadow 0.35s var(--ease);
+/* Exploration cards — boxed, 2-up, generous internal spacing */
+.card--exp { padding: clamp(1.6rem, 2.4vw, 2.5rem); }
+.card--exp .card__title {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  font-size: clamp(1.15rem, 1.05rem + 0.55vw, 1.4rem);
 }
-#case-studies .card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  pointer-events: none;
-  z-index: 2;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 45%);
-  opacity: var(--glare, 0);
-  transition: opacity 0.3s var(--ease);
-}
+.card--exp .card__desc { margin-bottom: var(--space-4); line-height: 1.65; }
+.card--exp .card__tag { letter-spacing: 0.1em; }
 
-/* Exploration card — placeholder media, same anatomy as the other cards */
-.card__media--ph {
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--color-bg), #ECE6DA);
-  border: 1px dashed var(--color-line);
+/* Explorations grid: 2 columns on desktop */
+@media (min-width: 861px) {
+  #explorations .grid { grid-template-columns: repeat(2, 1fr); }
 }
-.card__media--ph span {
-  font-size: var(--step-label);
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-faint);
-}
-.card--exp .card__desc { margin-bottom: var(--space-3); }
 .card__media {
   aspect-ratio: 4 / 3;
   border-radius: 10px;
@@ -389,6 +370,54 @@ ul { list-style: none; }
   .footer__inner { flex-direction: column; }
   .footer__cols { flex-wrap: wrap; gap: 2rem; }
   .footer__bar { flex-direction: column; align-items: flex-start; }
+}
+
+/* ---------- Mobile nav: hamburger dropdown ---------- */
+@media (max-width: 700px) {
+  .nav__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .nav__burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-ink);
+    transition: transform 0.3s var(--ease), opacity 0.2s ease;
+  }
+  .nav.is-open .nav__burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav.is-open .nav__burger span:nth-child(2) { opacity: 0; }
+  .nav.is-open .nav__burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-line);
+    padding: 4px var(--gutter) 14px;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .nav.is-open .nav__menu { opacity: 1; transform: none; pointer-events: auto; }
+  .nav__link {
+    font-size: 1rem;
+    padding: 13px 0;
+    border-top: 1px solid var(--color-line);
+  }
 }
 
 /* ---------- Reduced motion ---------- */

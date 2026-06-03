@@ -903,12 +903,11 @@ section {
 }
 
 /* ─── Detail Pages ─── */
-.detail-section {
-  display: grid;
-  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
-  gap: clamp(40px, 7vw, 96px);
-}
+/* One column: kicker on top, content below at a comfortable reading measure. */
+.detail-section { display: block; }
 .detail-kicker {
+  display: block;
+  margin-bottom: clamp(14px, 1.8vw, 22px);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -921,7 +920,8 @@ section {
   color: var(--fg);
 }
 .detail-copy p {
-  font-size: clamp(16px, 1.5vw, 21px);
+  max-width: 56ch;            /* ~10-12 words per line */
+  font-size: clamp(16px, 1.4vw, 20px);
   font-weight: 300;
   line-height: 1.65;
   color: var(--fg);
@@ -934,10 +934,11 @@ section {
 }
 .detail-list-item {
   display: grid;
-  grid-template-columns: minmax(160px, 0.55fr) minmax(0, 1fr);
+  grid-template-columns: minmax(150px, 0.4fr) minmax(0, 1fr);
   gap: 28px;
-  padding: 24px;
+  padding: 15px 24px;
   background: var(--surface);
+  align-items: baseline;
 }
 .detail-list-item span:first-child {
   font-size: 11px;
@@ -1071,35 +1072,40 @@ section {
 }
 .contact-links a:hover { color: var(--fg); }
 
-/* ─── Footer ─── */
+/* ─── Footer (dark, matches home + case studies) ─── */
 footer {
-  padding: 48px var(--pad);
-  border-top: 1px solid var(--border);
+  background: #211C17;
+  color: rgba(237, 232, 224, 0.6);
+  padding: clamp(2.5rem, 5vw, 4rem) var(--pad);
+  border-top: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
-.footer-name {
-  font-family: var(--ff-disp);
-  font-size: 18px;
-  font-weight: 500;
+.footer-name,
+footer > div:first-child {
+  font-family: var(--ff-script);
+  font-size: 24px;
+  font-weight: 600;
   font-style: normal;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
+  color: #fff;
 }
 .footer-copy {
   font-size: 12px;
   font-weight: 300;
-  color: var(--muted);
+  color: rgba(237, 232, 224, 0.5);
   letter-spacing: 0.04em;
 }
 .footer-links {
   display: flex;
   gap: 24px;
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(237, 232, 224, 0.85);
 }
-.footer-links a:hover { color: var(--accent); }
+.footer-links a:hover { color: #fff; }
 
 /* ─── Case Studies ─── */
 .cs-grid {
@@ -1566,3 +1572,8 @@ body:not(.page-works) #case-studies .cs-arrow svg {
 .about-name,
 .about-work-heading,
 .about-personal-heading { font-style: normal; font-weight: 600; }
+
+/* ─── Match the landing's container width on inner pages ─── */
+main { max-width: 1080px; margin-inline: auto; }
+/* ensure listing grids keep a side gutter when their section has none */
+.works-page-list { padding-inline: var(--pad); }

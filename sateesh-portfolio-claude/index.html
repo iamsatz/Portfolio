@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sateesh — Digital Product Designer</title>
-<meta name="description" content="Sateesh — Digital Product Designer with 12+ yrs of experience in AI assisted building, interface design, design systems and hyperlocal market intelligence.">
+<title>Sateesh, Digital Product Designer</title>
+<meta name="description" content="Sateesh, Digital Product Designer with 12+ yrs of experience in AI assisted building, interface design, design systems and hyperlocal market intelligence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
@@ -12,9 +12,12 @@
 </head>
 <body>
 
-<!-- Sticky nav — appears on scroll (S2 state) -->
+<!-- Sticky nav, appears on scroll (S2 state) -->
 <header class="nav">
   <a class="brand" href="#top">Sateesh</a>
+  <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <nav class="nav__menu" aria-label="Primary">
     <a class="nav__link" href="#case-studies">Case Studies</a>
     <a class="nav__link" href="#selected-projects">Works</a>
@@ -73,7 +76,7 @@
         <a class="card" href="case-studies/rhythm-healthcare/index.html">
           <span class="card__media"><img src="assets/work/rhythm.png" alt="Rhythm Healthcare Platform" loading="lazy"></span>
           <h3 class="card__title">Rhythm Healthcare Platform</h3>
-          <p class="card__desc">Redesigning a clinician's daily workflow on a remote patient monitoring platform processing 1.2M+ transmissions a year — and hearing "you made my work easier."</p>
+          <p class="card__desc">Redesigning a clinician's daily workflow on a remote patient monitoring platform processing 1.2M+ transmissions a year, and hearing "you made my work easier."</p>
           <span class="card__tag card__tag--sky">Health Care</span>
         </a>
 
@@ -129,28 +132,43 @@
   <section class="section" id="explorations">
     <div class="wrap">
       <h2 class="section__title">Explorations</h2>
-      <p class="section__lead">Side experiments — small concepts I build to think through ideas. Open any to see the concept and current thinking.</p>
+      <p class="section__lead">Side experiments, small concepts I build to think through ideas. Open any to see the concept and current thinking.</p>
 
       <div class="grid">
+        <a class="card card--exp" href="explorations/freestyle/index.html">
+          <h3 class="card__title">FreeStyle</h3>
+          <p class="card__desc">A design-system auditor for the browser, scan, inspect, replace, and audit colors, typography, and accessibility on any webpage.</p>
+          <span class="card__tag">Developer Tools</span>
+        </a>
+
         <a class="card card--exp" href="explorations/chrome-extension/index.html">
-          <span class="card__media card__media--ph"><span>Chrome Extension</span></span>
           <h3 class="card__title">Browser Workflow Tool</h3>
           <p class="card__desc">A small utility experiment designed around reducing repeated browser actions and keeping everyday workflows lighter.</p>
-          <span class="card__tag">Concept</span>
+          <span class="card__tag">Productivity</span>
+        </a>
+
+        <a class="card card--exp" href="explorations/bhor-weather/index.html">
+          <h3 class="card__title">Bhor: Weather, Decoded</h3>
+          <p class="card__desc">A menu-bar weather app that tells you what to do with the day, not just the numbers. Live weather, decoded into plain-language actions.</p>
+          <span class="card__tag">Consumer App</span>
         </a>
 
         <a class="card card--exp" href="explorations/convenience-store-india/index.html">
-          <span class="card__media card__media--ph"><span>Retail Concept</span></span>
           <h3 class="card__title">Convenience Store for India</h3>
           <p class="card__desc">A complete product and service concept for a modern Indian convenience store experience, shaped around local buying behavior.</p>
-          <span class="card__tag">Concept</span>
+          <span class="card__tag">Hyperlocal Commerce</span>
         </a>
 
         <a class="card card--exp" href="explorations/ai-tuition-students/index.html">
-          <span class="card__media card__media--ph"><span>AI Learning</span></span>
           <h3 class="card__title">AI Tuition for Students</h3>
           <p class="card__desc">A learning concept exploring how AI can help students practice, ask better questions, and understand topics at their own pace.</p>
-          <span class="card__tag">Concept</span>
+          <span class="card__tag">EdTech</span>
+        </a>
+
+        <a class="card card--exp" href="explorations/hueprint/index.html">
+          <h3 class="card__title">HuePrint</h3>
+          <p class="card__desc">Design token kits for AI-builders, pick a brand kit, paste it into your AI tool, and get branded UI instantly.</p>
+          <span class="card__tag">Design Tools</span>
         </a>
       </div>
     </div>
@@ -162,7 +180,7 @@
     <div class="footer__cta">
       <p class="footer__eyebrow">Have a project in mind?</p>
       <a class="footer__email" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
-      <p class="footer__avail">Product design &amp; design-systems work — selectively taking on new collaborations through 2026.</p>
+      <p class="footer__avail">Product design &amp; design-systems work, selectively taking on new collaborations through 2026.</p>
     </div>
     <div class="footer__cols">
       <nav class="footer__col" aria-label="Sitemap">
@@ -174,9 +192,9 @@
       </nav>
       <nav class="footer__col" aria-label="Elsewhere">
         <span class="footer__head">Elsewhere</span>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">Dribbble</a>
-        <a href="#" target="_blank" rel="noopener">HueGrid</a>
+        <a href="https://www.linkedin.com/in/iamsatz/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/iamsatz" target="_blank" rel="noopener">X</a>
+        <a href="https://huegrid.com/" target="_blank" rel="noopener">HueGrid</a>
       </nav>
     </div>
   </div>
@@ -196,11 +214,25 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
 
+  // Mobile menu toggle
+  const navEl = document.querySelector('.nav');
+  const burger = document.getElementById('navBurger');
+  if (burger && navEl) {
+    burger.addEventListener('click', () => {
+      const open = navEl.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open);
+    });
+    navEl.querySelectorAll('.nav__link').forEach(a => a.addEventListener('click', () => {
+      navEl.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
   // Smooth in-page scrolling (offset handled by scroll-padding-top)
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
-      if (id.length < 2) return;                 // ignore bare "#"
+      if (id.length < 2) { e.preventDefault(); return; }   // bare "#": inert, no jump
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
@@ -209,27 +241,7 @@
     });
   });
 
-  // Subtle 3D tilt + soft glare on case-study cards (fine pointers, no reduced-motion)
-  if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('#case-studies .card').forEach(card => {
-      const MAX = 8;
-      card.addEventListener('pointermove', e => {
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width;
-        const py = (e.clientY - r.top) / r.height;
-        card.style.setProperty('--rx', ((py - 0.5) * -MAX * 2).toFixed(2) + 'deg');
-        card.style.setProperty('--ry', ((px - 0.5) * MAX * 2).toFixed(2) + 'deg');
-        card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
-        card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
-        card.style.setProperty('--glare', '0.28');
-      });
-      card.addEventListener('pointerleave', () => {
-        card.style.setProperty('--rx', '0deg');
-        card.style.setProperty('--ry', '0deg');
-        card.style.setProperty('--glare', '0');
-      });
-    });
-  }
+  // (Case-study cards use a simple, subtle hover lift in CSS — no JS tilt.)
 </script>
 </body>
 </html>
