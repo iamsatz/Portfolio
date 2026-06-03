@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-version="exploration-detail-v1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portfolio-version" content="exploration-detail-v1">
+<title>HuePrint, Design Token Kits for AI Builders, Sateesh Kumar L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles/site.css">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../../index.html#top">Sateesh</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html#case-studies">Case Studies</a></li>
+    <li><a href="../../works/index.html">Works</a></li>
+    <li><a href="../../index.html#explorations" aria-current="page">Explorations</a></li>
+    <li><a href="mailto:hola@iamsatz.me">Say Hello</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <a class="back-link" href="../../index.html#explorations">← All explorations</a>
+    <div class="section-label">Web App · Concept</div>
+    <h1 class="page-title">HuePrint</h1>
+    <p class="section-sub">Design token kits for AI-builders. Pick a brand kit, paste it into your AI tool, get branded UI, instantly.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">The Concept</div>
+    <div class="detail-copy">
+      <p>AI tools generate functional UI, and then paint it in the same generic blue every time. They have no "import design tokens" button; they read prompts. So the way to give an AI your brand isn't a file, it's an instruction.</p>
+      <p>HuePrint is a token-kit store built around that insight. Each kit isn't just colors, it's a <strong>design-system prompt plus tokens</strong>. The prompt tells the AI <strong>how</strong> to use the palette, not just <strong>what</strong> the colors are. Browse curated kits, preview them on real components, and download AI-ready files you paste straight into Claude, v0, Cursor, or Bolt.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>One-liner</span><span>Pick a brand kit. Paste into your AI tool. Get branded UI.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">The Problem It Pokes At</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>No token import</span><span>AI builders don't ingest design tokens, they read prompts, so tokens alone never land.</span></div>
+        <div class="detail-list-item"><span>Generic defaults</span><span>Without guidance, AI falls back to stock colors and spacing, and everything looks the same.</span></div>
+        <div class="detail-list-item"><span>"What" without "how"</span><span>A hex list says what the brand is, not how to apply it across buttons, cards, and states.</span></div>
+        <div class="detail-list-item"><span>Design skill gap</span><span>Solo founders and indie hackers can code but can't design a coherent system from scratch.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">What's In a Kit, The Moat</div>
+    <div class="detail-copy">
+      <p>Each kit is a hand-curated three-file bundle:</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>system-prompt.md</span><span>The AI-readable design brief, full palette (light + dark), per-component usage rules, type/spacing/radius/shadow specs, and explicit "do NOT" rules that stop AI from reverting to generic defaults.</span></div>
+        <div class="detail-list-item"><span>tokens.css</span><span>shadcn/Radix-compatible CSS variables with light and dark mode, paste into globals.css and it just works.</span></div>
+        <div class="detail-list-item"><span>tokens.json</span><span>Universal W3C DTCG format, compatible with Style Dictionary, Figma Tokens, and Tailwind config generation.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">How It Works</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Browse</span><span>Curated, designer-crafted kits organized by industry.</span></div>
+        <div class="detail-list-item"><span>Preview</span><span>See tokens applied to real UI, buttons, cards, forms, nav, before you commit.</span></div>
+        <div class="detail-list-item"><span>Export</span><span>Download the three-file bundle and paste it into any AI code tool.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Who It's For</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Solo founder</span><span>Building with Claude/v0/Cursor, no design background, wants branded UI without learning design systems.</span></div>
+        <div class="detail-list-item"><span>Indie hacker</span><span>Ships several projects a year, codes but can't design, needs a professional, code-ready palette.</span></div>
+        <div class="detail-list-item"><span>Product designer</span><span>At an early-stage startup, living in Figma + AI tools, wants fast brand exploration that exports to code.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Current Thinking &amp; Status</div>
+    <div class="detail-copy">
+      <p>The interesting design problem is the <strong>system-prompt</strong>, not the swatches. Getting an AI to apply a palette consistently, and to <em>refuse</em> its defaults, is more about clear usage rules and "do NOT" guardrails than about the colors themselves.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Open question</span><span>How many rules are enough before the prompt gets too long for the AI to honour reliably?</span></div>
+        <div class="detail-list-item"><span>Stack</span><span>React 19 + TypeScript, Vite, Tailwind v4, shadcn/ui, chroma.js.</span></div>
+        <div class="detail-list-item"><span>Status</span><span>MVP, pre-development. Scoped to 8–12 curated kits, live component preview, and the three-file export.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact" class="detail-contact">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Want to see more?</h2>
+      <p class="contact-sub">I can walk through the idea, the kit format, and what I learned shaping it.</p>
+      <a class="contact-email" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-name">Sateesh</div>
+  <div class="footer-links">
+    <a href="../../index.html#explorations">All explorations</a>
+    <a href="mailto:hola@iamsatz.me">Email</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>

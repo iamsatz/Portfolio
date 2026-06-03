@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-version="exploration-detail-v1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portfolio-version" content="exploration-detail-v1">
+<title>FreeStyle, Design System Auditor, Sateesh Kumar L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles/site.css">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../../index.html#top">Sateesh</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html#case-studies">Case Studies</a></li>
+    <li><a href="../../works/index.html">Works</a></li>
+    <li><a href="../../index.html#explorations" aria-current="page">Explorations</a></li>
+    <li><a href="mailto:hola@iamsatz.me">Say Hello</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <a class="back-link" href="../../index.html#explorations">← All explorations</a>
+    <div class="section-label">Chrome Extension · Work in Progress</div>
+    <h1 class="page-title">FreeStyle</h1>
+    <p class="section-sub">A design-system auditor for the browser, scan, inspect, replace, and audit colors, typography, and accessibility on any webpage.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">The Concept</div>
+    <div class="detail-copy">
+      <p>Designers spend a lot of time poking at live websites, pulling colors, naming fonts, checking contrast, imagining a rebrand. The tools for it are scattered and half-broken: one extension reads styles but can't change them, another swaps a color but falls apart the moment you hover.</p>
+      <p>FreeStyle is one extension that does the whole loop: <strong>inspect like CSS Peeper, rebrand like a design tool, audit like an accessibility checker.</strong> Scan any page, see exactly how it's built, try changes live, and export the result in whatever format your stack speaks.</p>
+      <p>Built for product designers, developers, and brand designers, anyone who reverse-engineers and reworks the look of real pages.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">What It Does</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Scan</span><span>Extract every color, CSS variable, font, and text style from any page.</span></div>
+        <div class="detail-list-item"><span>Inspect</span><span>Point-click element inspector with a box-model overlay, computed styles, and inline contrast ratios, CSS Peeper-level detail.</span></div>
+        <div class="detail-list-item"><span>Replace</span><span>Live color and font replacement that holds up across hover, focus, and active states.</span></div>
+        <div class="detail-list-item"><span>Audit</span><span>WCAG 2.1 + APCA contrast checking with auto-fix suggestions.</span></div>
+        <div class="detail-list-item"><span>Export</span><span>JSON, CSS, SCSS, Tailwind, Figma Tokens, or an SVG palette.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Why It Exists</div>
+    <div class="detail-copy">
+      <p>Existing tools are either read-only (CSS Peeper) or break when you try to replace colors on hover states. FreeStyle solves both at once, and folds in the accessibility check most of them skip entirely.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Read-only is half a tool</span><span>Seeing the styles isn't enough; designers want to try a change and see it live.</span></div>
+        <div class="detail-list-item"><span>Replacement that survives state</span><span>Most live-edit tools forget hover/focus/active, so the "after" never looks real.</span></div>
+        <div class="detail-list-item"><span>Accessibility shouldn't be a separate app</span><span>Contrast belongs right next to the color you're changing, not in another tab.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">How It's Built, The Moat</div>
+    <div class="detail-copy">
+      <p>The core trick is an <strong>immutable scan layer with a separate override layer</strong>. The original page styles are captured once and never mutated; edits live in an overlay on top. That's what makes color replacement survive hover and focus states instead of silently breaking, the bug that sinks most "live rebrand" tools.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Architecture</span><span>Chrome Extension (Manifest V3), side-panel UI, vanilla ES6+ with zero dependencies.</span></div>
+        <div class="detail-list-item"><span>Contrast</span><span>APCA-W3 algorithm alongside WCAG 2.1, modern perceptual contrast, not just the legacy ratio.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Roadmap</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Phase 0 · Building</span><span>Foundation, extension shell, theming, color utilities.</span></div>
+        <div class="detail-list-item"><span>V1 · Next</span><span>Core color workflow, scan, locate, replace, export.</span></div>
+        <div class="detail-list-item"><span>V2 · Planned</span><span>Element inspector + eyedropper with magnifier.</span></div>
+        <div class="detail-list-item"><span>V3 · Planned</span><span>Typography (WhatFont-level) + accessibility audit.</span></div>
+        <div class="detail-list-item"><span>V4–V5 · Planned</span><span>Asset browser, gradients, design-system generation, and a Claude-powered AI assistant.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Status</div>
+    <div class="detail-copy">
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Status</span><span>Work in progress, building in public, session by session. Foundation phase, loadable as an unpacked Chrome extension.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact" class="detail-contact">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Want to see more?</h2>
+      <p class="contact-sub">I can walk through the idea, the architecture, and what I learned building it.</p>
+      <a class="contact-email" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-name">Sateesh</div>
+  <div class="footer-links">
+    <a href="../../index.html#explorations">All explorations</a>
+    <a href="mailto:hola@iamsatz.me">Email</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
