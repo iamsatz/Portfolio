@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-version="exploration-detail-v1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portfolio-version" content="exploration-detail-v1">
+<title>AI Tuition for Students, Sateesh Kumar L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,500,500i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles/site.css">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../../index.html#top">Sateesh</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html#case-studies">Case Studies</a></li>
+    <li><a href="../../works/index.html">Works</a></li>
+    <li><a href="../../index.html#explorations" aria-current="page">Explorations</a></li>
+    
+    <li><a href="mailto:hola@iamsatz.me">Say Hello</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="section-label">Side Experiment</div>
+    <h1 class="page-title">AI Tuition for Students</h1>
+    <p class="section-sub">A learning concept for helping students practice, ask better questions, and understand topics at their own pace.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Concept Notes</div>
+    <div class="detail-copy">
+      <p>This concept looks at AI as a patient tutor, not a shortcut machine. The focus is on guidance, practice, and confidence building.</p>
+      <p>The product direction explores how students can move from confusion to clarity through smaller prompts, examples, feedback, and revision loops.</p>
+      <div class="detail-list">
+        <div class="detail-list-item"><span>Problem</span><span>Students often need help at the exact moment they are stuck, but tutoring support is not always available or affordable.</span></div>
+        <div class="detail-list-item"><span>Direction</span><span>An AI-assisted learning flow that helps students reason through topics instead of only giving answers.</span></div>
+        <div class="detail-list-item"><span>Status</span><span>Concept exploration. Suitable for discussing AI UX, learning design, and product framing.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact" class="detail-contact">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Want to see more?</h2>
+      <p class="contact-sub">I can share the concept flow, interaction notes, and how I am thinking about responsible AI learning tools.</p>
+      <a class="contact-email" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-name">Sateesh</div>
+  <div class="footer-links">
+    <a href="../../index.html#explorations">All explorations</a>
+    <a href="mailto:hola@iamsatz.me">Email</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>

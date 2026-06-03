@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-version="selected-work-detail-v1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="portfolio-version" content="selected-work-detail-v1">
+<title>Clear Voice, Sateesh Kumar L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,500,500i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles/site.css">
+</head>
+<body class="page-works page-project-detail">
+<nav>
+  <a class="nav-logo" href="../../index.html#top">Sateesh</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html#case-studies">Case Studies</a></li>
+    <li><a href="../../works/index.html" aria-current="page">Works</a></li>
+    <li><a href="../../index.html#explorations">Explorations</a></li>
+    
+    <li><a href="mailto:hola@iamsatz.me">Say Hello</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <section class="page-hero project-detail-hero">
+    <a class="back-link" href="../index.html#works">&larr; All works</a>
+    <div class="section-label">09 &middot; Selected Work</div>
+    <h1 class="page-title">Clear Voice</h1>
+    <p class="section-sub">Noise cancellation for macOS calls</p>
+  </section>
+
+  <section class="project-detail-media">
+    <img src="../../assets/projects/clearvoice-noise-cancellation.png" alt="Clear Voice project preview placeholder" loading="lazy">
+    <span class="project-img-caption">Project preview - replace with 1600 x 900 px PNG</span>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section project-detail-summary">
+    <div class="detail-kicker">Overview</div>
+    <div class="detail-list">
+      <div class="detail-list-item"><span>Company</span><span>Infinative Design</span></div>
+      <div class="detail-list-item"><span>Role</span><span>UI/UX Designer</span></div>
+      <div class="detail-list-item"><span>Category</span><span>Productivity / macOS</span></div>
+      <div class="detail-list-item"><span>Year</span><span>2021</span></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">The Project</div>
+    <div class="detail-copy"><p>A macOS menu bar app that cancels background noise during calls. It lives in the menu bar, activates per call, and works alongside Zoom, Teams, Google Meet, and other calling tools.</p></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">What I Did</div>
+    <div class="detail-copy"><p>Designed the full product experience including menu bar UI, settings, onboarding, and call-active states. Worked within macOS HIG conventions and menu bar app constraints.</p></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Challenges</div>
+    <div class="detail-copy"><p>Menu bar apps have severe UI constraints: small dropdown panels, limited space, and native conventions users expect. The product had to compress important controls into a quiet, glanceable utility.</p></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="detail-section">
+    <div class="detail-kicker">Outcome</div>
+    <div class="detail-copy"><p>Shipped to macOS users. The app behaves like a quiet utility, which is the right behavior for a noise cancellation tool.</p></div>
+  </section>
+
+  <section class="detail-contact">
+    <div class="contact-block">
+      <div class="section-label">Contact</div>
+      <h2 class="contact-title">Want to discuss this project?</h2>
+      <a class="email-link" href="mailto:hola@iamsatz.me">hola@iamsatz.me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>Sateesh</div>
+  <div class="footer-links">
+    <a href="../../index.html#top">Home</a>
+    <a href="../index.html">Works</a>
+    <a href="../../index.html#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
